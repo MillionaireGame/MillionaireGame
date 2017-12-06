@@ -6,9 +6,15 @@
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="RegistrationPage">
+      Title="RegistrationPage" Height="400" Width="600" Background="Black">
 
-    <Grid>
-        
+    <Grid Height="360" Width="230" Background="Black">
+        <TextBlock x:Name="textBlockLogin" HorizontalAlignment="Center" Margin="109,167,89,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="32" Text="Login"/>
+        <TextBox x:Name="textBoxLogin" Height="30" Width="200" Margin="15,0,15,146" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="textBlockPassword" HorizontalAlignment="Center" Margin="100,219,80,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="50" Text="Password"/>
+        <TextBox x:Name="textBoxPassword" Height="30" Width="200" Margin="15,0,15,96" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="textBlockPassword2" HorizontalAlignment="Center" Margin="100,268,0,80" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="100" Text="Confirm Password"/>
+        <TextBox x:Name="textBoxPassword2" Height="30" Width="200" Margin="15,0,15,46" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <Button x:Name="buttonPlay" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,10"/>
     </Grid>
 </Page>

@@ -17,13 +17,14 @@
         <TextBlock x:Name="textBlockAllAnswers" HorizontalAlignment="Left" Margin="10,254,0,0" TextWrapping="Wrap" Text="All Answers :" VerticalAlignment="Top" Width="570" Foreground="White"/>
         <TextBox x:Name="textBoxAnswerA" HorizontalAlignment="Left" Height="23" Margin="32,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
         <TextBox x:Name="textBoxAnswerB" HorizontalAlignment="Left" Height="23" Margin="32,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <TextBox x:Name="textBoxAnswerC" HorizontalAlignment="Left" Height="23" Margin="32,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <TextBox x:Name="textBoxAnswerD" HorizontalAlignment="Left" Height="23" Margin="32,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <TextBox x:Name="textBoxCorrectAnswer" HorizontalAlignment="Left" Height="23" Margin="32,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxAnswerC" HorizontalAlignment="Left" Height="23" Margin="32,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxAnswerD" HorizontalAlignment="Left" Height="23" Margin="32,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxCorrectAnswer" HorizontalAlignment="Left" Height="23" Margin="110,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
         <TextBlock x:Name="textBlockA" HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" Text="A:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
         <TextBlock x:Name="textBlockB" HorizontalAlignment="Left" Margin="10,309,0,0" TextWrapping="Wrap" Text="B:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
-        <TextBlock x:Name="textBlockC" HorizontalAlignment="Left" Margin="10,345,0,0" TextWrapping="Wrap" Text="C:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
-        <TextBlock x:Name="textBlockD" HorizontalAlignment="Left" Margin="10,382,0,0" TextWrapping="Wrap" Text="D:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
-        <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Margin="505,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="textBlockC" HorizontalAlignment="Left" Margin="10,343,0,0" TextWrapping="Wrap" Text="C:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <TextBlock x:Name="textBlockD" HorizontalAlignment="Left" Margin="10,378,0,0" TextWrapping="Wrap" Text="D:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <Button x:Name="buttonEdit" Content="Edit" HorizontalAlignment="Left" Margin="505,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="buttonDelete" Content="Delete" HorizontalAlignment="Left" Margin="412,432,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Page>
