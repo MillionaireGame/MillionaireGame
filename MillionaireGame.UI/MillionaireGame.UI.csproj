@@ -136,5 +136,20 @@
       <Name>MillionaireGame.Logic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\50.50.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\audience.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\call.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
