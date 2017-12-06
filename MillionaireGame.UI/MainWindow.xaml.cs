@@ -23,7 +23,8 @@ namespace MillionaireGame.UI
         public MainWindow()
         {
             InitializeComponent();
-            
+            frameMain.Navigate(new AdminPage());
+
         }
     }
 }
