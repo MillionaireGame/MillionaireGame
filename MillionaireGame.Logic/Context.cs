@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionaireGame.Logic
 {
-    public class Context
+    class Context
     {
     }
 }
