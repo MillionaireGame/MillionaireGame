@@ -37,6 +37,12 @@ namespace MillionaireGame.UI
 
             dataGridQuestions.ItemsSource = null;
             dataGridQuestions.ItemsSource = _repository.Questions;
+            textBoxNewQuestion.Text = null;
+            textBoxAnswerA.Text = null;
+            textBoxAnswerB.Text = null;
+            textBoxAnswerC.Text = null;
+            textBoxAnswerD.Text = null;
+            textBoxCorrectAnswer.Text = null;
         }
     }
 }
