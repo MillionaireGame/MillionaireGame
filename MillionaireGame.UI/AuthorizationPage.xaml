@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      
       Title="AuthorizationPage" Height="400" Width="600" Background="Black">
 
     <Grid Height="360" Width="230" Background="Black">
-        <TextBlock x:Name="textBlockLogin" HorizontalAlignment="Center" Margin="109,167,89,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="32" Text="Login"/>
+        <TextBlock x:Name="textBlockLogin" HorizontalAlignment="Left" Margin="15,167,89,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="32" Text="Login"/>
         <TextBox x:Name="textBoxLogin" Height="30" Width="200" Margin="15,0,15,146" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="textBlockPassword" HorizontalAlignment="Center" Margin="100,219,80,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="50" Text="Password"/>
+        <TextBlock x:Name="textBlockPassword" HorizontalAlignment="Left" Margin="15,218,80,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="50" Text="Password"/>
         <TextBox x:Name="textBoxPassword" Height="30" Width="200" Margin="15,0,15,96" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <Button x:Name="buttonPlay" Content="Play" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,50"/>
         <Button x:Name="buttonRegistration" Content="Sing Up" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,0"/>
