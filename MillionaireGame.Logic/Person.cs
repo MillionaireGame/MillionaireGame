@@ -8,23 +8,16 @@ namespace MillionaireGame.Logic
 {
    public class Person
     {
-        private string _login, _password;
-        public string Login
-        {
-            get { return _login; }
-            set { _login = value; }
-        }
+        public int ID;
+        public string Login { get; set; }
+        public string Password { get; set; }
 
-        public string Password
-        {
-            get { return _password; }
-            set { _password = value; }
-        }
+        
 
         public Person(string login, string password)
         {
-            _password = password;
-            _login = login;
+            Password = password;
+            Login = login;
         }
     }
 }
