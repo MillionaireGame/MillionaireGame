@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.UI", "MillionaireGame.UI\MillionaireGame.UI.csproj", "{38FA4F81-5610-44E3-A920-AC01F4522D09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGame.Logic", "MillionaireGame.Logic\MillionaireGame.Logic.csproj", "{AFFBBFBB-4DAB-4D05-B7C0-E6CAA1926A66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{38FA4F81-5610-44E3-A920-AC01F4522D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38FA4F81-5610-44E3-A920-AC01F4522D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38FA4F81-5610-44E3-A920-AC01F4522D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFBBFBB-4DAB-4D05-B7C0-E6CAA1926A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFBBFBB-4DAB-4D05-B7C0-E6CAA1926A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFBBFBB-4DAB-4D05-B7C0-E6CAA1926A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFBBFBB-4DAB-4D05-B7C0-E6CAA1926A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
