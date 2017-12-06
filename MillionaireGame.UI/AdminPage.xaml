@@ -1,0 +1,29 @@
+﻿<Page x:Class="MillionaireGame.UI.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MillionaireGame.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AdminPage" Height="495" Width="600">
+
+    <Grid Background="Black" Height="464" Width="592">
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="dataGridQuestions"  IsReadOnly="True" Background="White" Height="190" Width="580" Margin="10,10,0,0"/>
+        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="317,432,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Foreground="White" Text="Add new question to DataBase :"/>
+        <TextBox x:Name="textBoxNewQuestion" HorizontalAlignment="Left" Height="23" Margin="10,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="570"/>
+        <TextBlock x:Name="textBlockCorrectAnswer" HorizontalAlignment="Left" Margin="10,411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" Foreground="White" Text="Correct Answer :"/>
+        <TextBlock x:Name="textBlockAllAnswers" HorizontalAlignment="Left" Margin="10,254,0,0" TextWrapping="Wrap" Text="All Answers :" VerticalAlignment="Top" Width="570" Foreground="White"/>
+        <TextBox x:Name="textBoxAnswerA" HorizontalAlignment="Left" Height="23" Margin="32,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxAnswerB" HorizontalAlignment="Left" Height="23" Margin="32,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxAnswerC" HorizontalAlignment="Left" Height="23" Margin="32,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxAnswerD" HorizontalAlignment="Left" Height="23" Margin="32,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="textBoxCorrectAnswer" HorizontalAlignment="Left" Height="23" Margin="32,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBlock x:Name="textBlockA" HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" Text="A:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <TextBlock x:Name="textBlockB" HorizontalAlignment="Left" Margin="10,309,0,0" TextWrapping="Wrap" Text="B:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <TextBlock x:Name="textBlockC" HorizontalAlignment="Left" Margin="10,345,0,0" TextWrapping="Wrap" Text="C:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <TextBlock x:Name="textBlockD" HorizontalAlignment="Left" Margin="10,382,0,0" TextWrapping="Wrap" Text="D:" VerticalAlignment="Top" Foreground="White" Height="22" Width="17"/>
+        <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Margin="505,432,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Page>
