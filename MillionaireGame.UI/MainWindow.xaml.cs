@@ -23,6 +23,7 @@ namespace MillionaireGame.UI
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
