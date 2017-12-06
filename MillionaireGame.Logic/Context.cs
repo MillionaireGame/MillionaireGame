@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace MillionaireGame.Logic
 {
-    class Context: DbContext
+    public class Context: DbContext
     {
         public DbSet<Question> Questions { get; set; }
 

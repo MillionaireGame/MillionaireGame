@@ -21,9 +21,22 @@ namespace MillionaireGame.UI
     /// </summary>
     public partial class AdminPage : Page
     {
+        Repository _repository = new Repository();
+
         public AdminPage()
         {
             InitializeComponent();
+            dataGridQuestions.ItemsSource = _repository.Questions;
+        }
+
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string msg;
+            CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
+            MessageBox.Show(msg);
+
+            dataGridQuestions.ItemsSource = null;
+            dataGridQuestions.ItemsSource = _repository.Questions;
         }
     }
 }
