@@ -24,5 +24,27 @@ namespace MillionaireGame.UI
         {
             InitializeComponent();
         }
+
+        private void buttonEnter_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxLogin.Text == "")
+
+            {
+                MessageBox.Show("Enter login");
+                return;
+            }
+            if (PasswordBox.Password.ToString() == "")
+            {
+                MessageBox.Show("Enter password");
+                return;
+            }
+
+            if (textBoxLogin.Text=="admin"&& PasswordBox.Password.ToString()=="12345678")
+            {
+                AdminPage adminpage = new AdminPage();
+                NavigationService.Navigate(adminpage);
+            }
+
+        }
     }
 }
