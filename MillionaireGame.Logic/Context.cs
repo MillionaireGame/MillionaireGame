@@ -11,6 +11,6 @@ namespace MillionaireGame.Logic
     {
         public DbSet<Question> Questions { get; set; }
         
-        public Context(): base("localsql") { }
+        public Context(): base("DBMillionaireGame") { }
     }
 }
