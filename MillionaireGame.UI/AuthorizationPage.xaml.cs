@@ -41,9 +41,9 @@ namespace MillionaireGame.UI
 
             if (textBoxLogin.Text=="admin"&& PasswordBox.Password.ToString()=="12345678")
             {
-                AdminPage adminpage = new AdminPage();
+              //  AdminPage adminpage = new AdminPage();
                 GamePage gp = new GamePage();
-                NavigationService.Navigate(adminpage);
+                NavigationService.Navigate(gp);
             }
 
         }

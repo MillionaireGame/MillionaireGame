@@ -25,6 +25,7 @@ namespace MillionaireGame.UI
         public GamePage()
         {
             InitializeComponent();
+            Questions();
 
         }
 
@@ -38,7 +39,7 @@ namespace MillionaireGame.UI
 
         //
         int correctAnswerCounter = 0;
-        string questionsID;
+        int questionsID;
         string randomCommand; //String for sql random command
         string correctLetter; //String to remember correct letter when you use audienceHelp
         string callAnswer; //String for correct answer when you use callHelp
@@ -60,6 +61,54 @@ namespace MillionaireGame.UI
 
 
 
+
+
+
+
+
+
+
+
+
+
+        //methods for questions 
+
+        private void Questions()
+        {// choosing a random number for quest 
+            // rand quest+ 
+            // answers
+
+            Repository rep = new Repository();
+            Random rnd = new Random();
+            //  int month = rnd.Next(1, 13);
+            questionsID = rnd.Next(0, rep.Questions.Count );
+           
+            if (questionUsedId.Contains(questionsID))
+            {
+              //  MessageBox.Show("This question has already been used");
+               Questions();
+                return;
+            }
+            else
+            {
+                textQuestion.Text = rep.Questions[questionsID].QuestionText.ToString();
+                questionUsedId.Add(questionsID);
+                buttonAnswerA.Content = "A" + rep.Questions[questionsID].AnswerA.ToString();
+                buttonAnswerB.Content = "B" + rep.Questions[questionsID].AnswerB.ToString();
+                buttonAnswerC.Content = "C" + rep.Questions[questionsID].AnswerC.ToString();
+                buttonAnswerD.Content = "D" + rep.Questions[questionsID].AnswerD.ToString();
+
+            }
+           // randomCommand = "SELECT top 1 * from QuestionTable ORDER BY Rnd(-(100000*ID)*Time()) ";
+           
+
+
+        }
+
+
+
+
+      // for going back ))))))))))))))))))))))))))))))))))))))))))
         private void buttonClose_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result;
@@ -74,6 +123,11 @@ namespace MillionaireGame.UI
             {
                 return;
             }
+        }
+
+        private void Upd(object sender, RoutedEventArgs e)
+        {
+            Questions();
         }
     }
 

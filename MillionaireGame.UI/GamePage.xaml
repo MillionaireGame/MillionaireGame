@@ -17,5 +17,6 @@
         <Button x:Name="button50_50"  HorizontalAlignment="Left" Margin="480,3,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
         <Button x:Name="buttobAudience"  HorizontalAlignment="Left" Margin="480,40,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
         <Button x:Name="buttonCall"  HorizontalAlignment="Left" Margin="480,77,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
+        <Button Content="Update Question" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="43,409,0,-49" Click="Upd"/>
     </Grid>
 </Page>
