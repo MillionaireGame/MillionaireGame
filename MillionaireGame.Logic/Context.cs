@@ -9,7 +9,8 @@ namespace MillionaireGame.Logic
 {
     public class Context: DbContext
     {
-        public DbSet<Question> Questions { get; set; }
+        public DbSet<Question> Questions { get; set; }      
+        public DbSet<Person> Persons { get; set; }
         
         public Context(): base("localsql") { }
     }

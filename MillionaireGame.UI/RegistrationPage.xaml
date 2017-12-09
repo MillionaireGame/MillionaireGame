@@ -14,6 +14,6 @@
         <PasswordBox x:Name="PasswordBox" Height="30" Width="200" Margin="15,0,15,96" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBlock x:Name="textBlockPassword2" HorizontalAlignment="Left" Margin="15,267,15,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="100" Text="Confirm Password"/>
         <PasswordBox x:Name="PasswordBox2" Height="30" Width="200" Margin="15,0,15,46" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Button x:Name="buttonPlay" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,10"/>
+        <Button x:Name="buttonPlay" Content="Submit" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,10" Click="buttonPlay_Click"/>
     </Grid>
 </Page>

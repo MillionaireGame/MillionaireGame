@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Data.Entity;
+using MillionaireGame.Logic;
 
 namespace MillionaireGame.UI
 {
@@ -23,6 +24,17 @@ namespace MillionaireGame.UI
         public RegistrationPage()
         {
             InitializeComponent();
+        }
+
+        private void buttonPlay_Click(object sender, RoutedEventArgs e)
+        {
+            string msg;
+            Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
+            MessageBox.Show(msg);
+
+            textBoxLogin.Text = null;
+            PasswordBox.Password = null;
+            PasswordBox2.Password = null;
         }
     }
 }

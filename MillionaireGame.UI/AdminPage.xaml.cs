@@ -44,5 +44,27 @@ namespace MillionaireGame.UI
             textBoxAnswerD.Text = null;
             textBoxCorrectAnswer.Text = null;
         }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            CRUDoperations.EditQuestion(dataGridQuestions.ItemsSource as IEnumerable<Question>);
+            MessageBox.Show("Quetions were edited!");
+
+            Refresh();
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            CRUDoperations.DeleteQuestion(dataGridQuestions.SelectedItem as Question);
+            MessageBox.Show("Question was deleted!");
+            
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            dataGridQuestions.ItemsSource = null;
+            dataGridQuestions.ItemsSource = _repository.Questions;
+        }
     }
 }

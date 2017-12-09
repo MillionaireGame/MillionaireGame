@@ -25,5 +25,39 @@ namespace MillionaireGame.Logic
             }
             
         }
+
+        public static void EditQuestion(IEnumerable<Question> questions)
+        {
+            using (var context = new Context())
+            {
+                foreach (var q in questions)
+                {
+                    context.Questions.Find(q.ID).QuestionText=q.QuestionText;
+                    context.Questions.Find(q.ID).AnswerA = q.AnswerA;
+                    context.Questions.Find(q.ID).AnswerB = q.AnswerB;
+                    context.Questions.Find(q.ID).AnswerC = q.AnswerC;
+                    context.Questions.Find(q.ID).AnswerD = q.AnswerD;
+                    context.Questions.Find(q.ID).CorrectAnswer = q.CorrectAnswer;
+                    
+                }
+
+                context.SaveChanges();
+            }
+        }
+
+        public static void DeleteQuestion(Question question)
+        {
+            using (var context = new Context())
+            {
+                
+                    var p = context.Questions.Find(question.ID);
+                    context.Questions.Remove(p);
+
+                    context.SaveChanges();
+                  
+            }
+            
+
+        }
     }
 }
