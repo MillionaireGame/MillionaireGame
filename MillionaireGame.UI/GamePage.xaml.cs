@@ -30,7 +30,7 @@ namespace MillionaireGame.UI
         }
 
         //started to write logic of the game
-        private Question NewQuestion { get; set; }
+        private Question CurrentQuest { get; set; }
 
         List<int> questionUsedId = new List<int>();
         List<int> prices = new List<int>(new int[] { 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000 }); //List for prices
@@ -53,7 +53,25 @@ namespace MillionaireGame.UI
         // one event for four buttons
         private void answer_Click(object sender, RoutedEventArgs e)
         {
+            Repository rep = new Repository();
+          //  questionUsedId.Add(rep.Questions[questionsID])
             string Tag = (sender as Button).Tag.ToString(); //Getting the Tag of button that has been checked (A,B,C or D)
+            if (Tag == rep.Questions[questionsID].CorrectAnswer)
+            {
+                MessageBox.Show("Correct Answer yohooo");
+                Questions();
+              //  UpdateButton.Content = "Next Question";//If answer is correct, the content of the button will be "Next Question"
+              //  UpdateButton.Visibility = System.Windows.Visibility.Visible;
+              //  (sender as Button).Background = System.Windows.Media.Brushes.Green;
+
+            }
+
+            else
+            {
+                MessageBox.Show("Incorrect answer Sorry");
+                return;
+
+            }
 
 
         }
@@ -73,7 +91,7 @@ namespace MillionaireGame.UI
 
         //methods for questions 
 
-        private void Questions()
+        private int  Questions()
         {// choosing a random number for quest 
             // rand quest+ 
             // answers
@@ -87,7 +105,7 @@ namespace MillionaireGame.UI
             {
               //  MessageBox.Show("This question has already been used");
                Questions();
-                return;
+                
             }
             else
             {
@@ -99,10 +117,10 @@ namespace MillionaireGame.UI
                 buttonAnswerD.Content = "D" + rep.Questions[questionsID].AnswerD.ToString();
 
             }
-           // randomCommand = "SELECT top 1 * from QuestionTable ORDER BY Rnd(-(100000*ID)*Time()) ";
-           
+            // randomCommand = "SELECT top 1 * from QuestionTable ORDER BY Rnd(-(100000*ID)*Time()) ";
 
 
+            return questionsID;
         }
 
 
