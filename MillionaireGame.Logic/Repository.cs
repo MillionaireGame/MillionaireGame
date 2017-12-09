@@ -8,7 +8,7 @@ namespace MillionaireGame.Logic
 {
     public class Repository
     {
-        public IEnumerable<Question> Questions
+        public IList<Question> Questions
         {
             get
             {

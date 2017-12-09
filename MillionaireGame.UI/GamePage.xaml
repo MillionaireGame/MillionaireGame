@@ -14,15 +14,9 @@
         <Button x:Name="buttonAnswerC" Tag="C" Content="" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="72,257,0,0" Width="162" Height="51" Click="answer_Click"/>
         <Button x:Name="buttonAnswerD" Tag="D" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162"  Height="51" Margin="310,257,0,0" Click="answer_Click"/>
         <Button x:Name="buttonClose"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="30" Margin="0,5,0,0" Click="buttonClose_Click"/>
-        <Button x:Name="button50_50" HorizontalAlignment="Left" Margin="480,3,0,0" VerticalAlignment="Top" Width="60" Height="40">
-            <Image Source="Images/50.50.jpg" Height="35" Width="56"/>
-        </Button>
-        <Button x:Name="buttobAudience"  HorizontalAlignment="Left" Margin="480,40,0,0" VerticalAlignment="Top" Width="60" Height="40">
-            <Image Source="Images/audience.jpg" Height="35" Width="56"/>
-        </Button>
-        <Button x:Name="buttonCall"  HorizontalAlignment="Left" Margin="480,77,0,0" VerticalAlignment="Top" Width="60" Height="40">
-        <Image Source="Images/call.jpg" Height="35" Width="56"/>
-        </Button>
-        <Image x:Name="logo" Height="170" Width="170" VerticalAlignment="Top" HorizontalAlignment="Center" Source="Images/logo.png"/>
+        <Button x:Name="button50_50"  HorizontalAlignment="Left" Margin="480,3,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
+        <Button x:Name="buttobAudience"  HorizontalAlignment="Left" Margin="480,40,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
+        <Button x:Name="buttonCall"  HorizontalAlignment="Left" Margin="480,77,0,0" VerticalAlignment="Top" Width="60" Height="40"/>
+        <Button Content="Update Question" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="43,409,0,-49" Click="Upd"/>
     </Grid>
 </Page>
