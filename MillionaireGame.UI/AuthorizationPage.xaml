@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      
       Title="AuthorizationPage" Height="495" Width="600" Background="Black">
 
     <Grid Height="360" Width="230" Background="Black">
@@ -13,7 +12,8 @@
         <TextBox x:Name="textBoxLogin" Height="30" Width="200" Margin="15,0,15,146" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBlock x:Name="textBlockPassword" HorizontalAlignment="Left" Margin="15,218,80,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Width="50" Text="Password"/>
         <PasswordBox x:Name="PasswordBox" Height="30" Width="200" Margin="15,0,15,96" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Button x:Name="buttonEnter" Content="Enter" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,50" Click="buttonEnter_Click" />
+        <Button x:Name="buttonEnter" IsDefault="True"  Content="Enter" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,50" Click="buttonEnter_Click" />
         <Button x:Name="buttonRegistration" Content="Sing Up" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,0"/>
+        <Image x:Name="logo" Height="170" Width="170" VerticalAlignment="Top" HorizontalAlignment="Center" Source="Images/logo.png"/>
     </Grid>
 </Page>
