@@ -48,6 +48,10 @@ namespace MillionaireGame.UI
 
         }
 
-        
+        private void buttonBack_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationPage authpage = new AuthorizationPage();
+            NavigationService.Navigate(authpage);
+        }
     }
 }

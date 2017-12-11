@@ -40,10 +40,10 @@ namespace MillionaireGame.UI
         //
         int correctAnswerCounter = 0;
         int questionsID;
-        string randomCommand; //String for sql random command
+       
         string correctLetter; //String to remember correct letter when you use audienceHelp
         string callAnswer; //String for correct answer when you use callHelp
-        string win;// for sum
+        
 
 
 

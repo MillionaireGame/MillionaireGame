@@ -68,6 +68,10 @@ namespace MillionaireGame.UI
             dataGridQuestions.ItemsSource = _repository.Questions;
         }
 
-        
+        private void buttonBack_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationPage authpage = new AuthorizationPage();
+            NavigationService.Navigate(authpage);
+        }
     }
 }
