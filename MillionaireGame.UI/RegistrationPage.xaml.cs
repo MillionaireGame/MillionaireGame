@@ -41,9 +41,8 @@ namespace MillionaireGame.UI
                 Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
                 MessageBox.Show(msg);
 
-                textBoxLogin.Text = null;
-                PasswordBox.Password = null;
-                PasswordBox2.Password = null;
+                AuthorizationPage authorizationPage = new AuthorizationPage();
+                NavigationService.Navigate(authorizationPage);
             }
 
         }
