@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MillionaireGame.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,13 +40,30 @@ namespace MillionaireGame.UI
                 return;
             }
 
-            if (textBoxLogin.Text=="admin"&& PasswordBox.Password.ToString()=="12345678")
-            {
-              //  AdminPage adminpage = new AdminPage();
-                GamePage gp = new GamePage();
-                NavigationService.Navigate(gp);
-            }
 
+            if (textBoxLogin.Text == "admin" && PasswordBox.Password.ToString() == "12345678")
+            {
+                AdminPage adminpage = new AdminPage();
+                // GamePage gp = new GamePage();
+                NavigationService.Navigate(adminpage);
+            }
+            else
+            {
+                string msg;
+                Methods.CheckPlayer(textBoxLogin.Text, PasswordBox.Password, out msg);
+                if (msg == "")
+                {
+                    GamePage gamepage = new GamePage();
+                    NavigationService.Navigate(gamepage);
+                }
+                else MessageBox.Show(msg);
+            }
+        }
+
+        private void buttonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationPage registration = new RegistrationPage();
+            NavigationService.Navigate(registration);
         }
     }
 }

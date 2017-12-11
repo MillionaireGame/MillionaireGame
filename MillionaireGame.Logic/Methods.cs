@@ -24,5 +24,18 @@ namespace MillionaireGame.Logic
             }
 
         }
+
+        public static void CheckPlayer(string login, string password, out string message)
+        {
+            using (var context = new Context())
+            {
+                if (context.Persons.FirstOrDefault(p => p.Login == login && p.Password == password) != null)
+                {
+                   
+                    message = "";
+                }
+                else  message = "You should register!"; 
+            }
+        }
     }
 }
