@@ -12,10 +12,12 @@ namespace MillionaireGame.Logic
         {
             get
             {
-                using (var context = new Context())
-                {
-                    return context.Questions.ToList();
-                }
+                
+                    using (var context = new Context())
+                    {
+                        return context.Questions.ToList();
+                    }
+                
             }
         }
 

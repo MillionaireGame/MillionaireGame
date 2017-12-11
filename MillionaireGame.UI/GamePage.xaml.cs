@@ -60,6 +60,8 @@ namespace MillionaireGame.UI
             {
                 MessageBox.Show("Correct Answer yohooo");
                 Questions();
+                textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                correctAnswerCounter++;
               //  UpdateButton.Content = "Next Question";//If answer is correct, the content of the button will be "Next Question"
               //  UpdateButton.Visibility = System.Windows.Visibility.Visible;
               //  (sender as Button).Background = System.Windows.Media.Brushes.Green;

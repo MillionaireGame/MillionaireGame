@@ -43,5 +43,14 @@ namespace MillionaireGame.UI
                 return _gamePage;
             }
         }
+
+        private static SafetyNetPage _safetyNetPage = new SafetyNetPage();
+        public static SafetyNetPage SafetyNetPage
+        {
+            get
+            {
+                return _safetyNetPage;
+            }
+        }
     }
 }

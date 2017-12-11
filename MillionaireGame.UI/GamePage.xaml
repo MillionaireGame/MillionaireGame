@@ -26,6 +26,7 @@
         <Button x:Name="UpdateButton" Content="Update Question" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="43,409,0,-49" Click="Upd"/>
         <Image x:Name="logo" Height="170" Width="170" VerticalAlignment="Top" HorizontalAlignment="Center" Source="Images/logo.png"/>
        <Image x:Name="money" Height="210" Width="140" VerticalAlignment="Top" HorizontalAlignment="Right" Source="Images/money.jpg"/>
+        <TextBlock Name="textBlockMoney" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="210,194,0,0" Height="36" Width="108" Foreground="#FFE0EA1E"/>
 
     </Grid>
 </Page>
