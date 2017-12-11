@@ -56,9 +56,10 @@ namespace MillionaireGame.UI
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
             CRUDoperations.DeleteQuestion(dataGridQuestions.SelectedItem as Question);
+            Refresh();
             MessageBox.Show("Question was deleted!");
             
-            Refresh();
+            
         }
 
         private void Refresh()
@@ -66,5 +67,7 @@ namespace MillionaireGame.UI
             dataGridQuestions.ItemsSource = null;
             dataGridQuestions.ItemsSource = _repository.Questions;
         }
+
+        
     }
 }

@@ -26,15 +26,28 @@ namespace MillionaireGame.UI
             InitializeComponent();
         }
 
-        private void buttonPlay_Click(object sender, RoutedEventArgs e)
+        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
         {
             string msg;
-            Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
-            MessageBox.Show(msg);
+            if (PasswordBox.Password != PasswordBox2.Password)
+            {
+                MessageBox.Show("Passwors do not coincide. Try again!");
+                PasswordBox.Password = null;
+                PasswordBox2.Password = null;
+            }
+            else
 
-            textBoxLogin.Text = null;
-            PasswordBox.Password = null;
-            PasswordBox2.Password = null;
+            {
+                Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
+                MessageBox.Show(msg);
+
+                textBoxLogin.Text = null;
+                PasswordBox.Password = null;
+                PasswordBox2.Password = null;
+            }
+
         }
+
+        
     }
 }
