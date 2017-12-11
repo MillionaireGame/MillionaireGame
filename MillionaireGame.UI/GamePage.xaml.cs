@@ -147,6 +147,11 @@ namespace MillionaireGame.UI
         {
             Questions();
         }
+
+        private void button50_50_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 
