@@ -29,10 +29,13 @@ namespace MillionaireGame.Logic
         {
             using (var context = new Context())
             {
-                if (context.Persons.FirstOrDefault(p => p.Login == login && p.Password == password) != null)
+                if (context.Persons.FirstOrDefault(p => p.Login == login) != null)
                 {
-                   
-                    message = "";
+                    if (context.Persons.FirstOrDefault(p => p.Password == password) != null)
+
+                        message = "";
+
+                    else message = "The wrong password. Try again!";
                 }
                 else  message = "You should register!"; 
             }

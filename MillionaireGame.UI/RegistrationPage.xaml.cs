@@ -31,7 +31,7 @@ namespace MillionaireGame.UI
             string msg;
             if (PasswordBox.Password != PasswordBox2.Password)
             {
-                MessageBox.Show("Passwors do not coincide. Try again!");
+                MessageBox.Show("Passwords do not coincide. Try again!");
                 PasswordBox.Password = null;
                 PasswordBox2.Password = null;
             }
