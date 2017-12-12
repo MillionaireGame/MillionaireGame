@@ -70,8 +70,12 @@ namespace MillionaireGame.UI
 
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationPage authpage = new AuthorizationPage();
-            NavigationService.Navigate(authpage);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                AuthorizationPage authpage = new AuthorizationPage();
+                NavigationService.Navigate(authpage);
+            }
         }
     }
 }

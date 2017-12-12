@@ -38,17 +38,13 @@ namespace MillionaireGame.UI
         // hints
 
         //
-        int correctAnswerCounter = 0;
+        int correctAnswerCounter = 1;
         int questionsID;
        
         string correctLetter; //String to remember correct letter when you use audienceHelp
         string callAnswer; //String for correct answer when you use callHelp
         
-
-
-
-
-
+       
 
         // one event for four buttons
         private void answer_Click(object sender, RoutedEventArgs e)
@@ -61,10 +57,12 @@ namespace MillionaireGame.UI
                 MessageBox.Show("Correct Answer yohooo");
                 Questions();
                 textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                textBlockMoneyPrev.Text = prices[correctAnswerCounter-1].ToString();
+                textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
                 correctAnswerCounter++;
-              //  UpdateButton.Content = "Next Question";//If answer is correct, the content of the button will be "Next Question"
-              //  UpdateButton.Visibility = System.Windows.Visibility.Visible;
-              //  (sender as Button).Background = System.Windows.Media.Brushes.Green;
+                //  UpdateButton.Content = "Next Question";//If answer is correct, the content of the button will be "Next Question"
+                //  UpdateButton.Visibility = System.Windows.Visibility.Visible;
+                //  (sender as Button).Background = System.Windows.Media.Brushes.Green;
 
             }
 
@@ -77,19 +75,6 @@ namespace MillionaireGame.UI
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         //methods for questions 
 
@@ -134,7 +119,7 @@ namespace MillionaireGame.UI
             MessageBoxResult result;
             result = MessageBox.Show("Are you sure, you want to exit ?", "Exit the Game", MessageBoxButton.YesNo);
 
-            if (result == MessageBoxResult.OK)
+            if (result == MessageBoxResult.Yes)
             {
                 AuthorizationPage authpage = new AuthorizationPage();
                 NavigationService.Navigate(authpage);

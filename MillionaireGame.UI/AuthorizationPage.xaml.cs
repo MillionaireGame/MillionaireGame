@@ -53,8 +53,8 @@ namespace MillionaireGame.UI
                 Methods.CheckPlayer(textBoxLogin.Text, PasswordBox.Password, out msg);
                 if (msg == "")
                 {
-                    GamePage gamepage = new GamePage();
-                    NavigationService.Navigate(gamepage);
+                    SafetyNetPage safetynetpage = new SafetyNetPage();
+                    NavigationService.Navigate(safetynetpage);
                 }
                 else MessageBox.Show(msg);
             }

@@ -38,12 +38,25 @@ namespace MillionaireGame.UI
             {
                 m = comboboxPrices.SelectedItem.ToString();
                 MessageBox.Show("Your Safety Net is " + m);
+
+                GamePage gamepage = new GamePage();
+                NavigationService.Navigate(gamepage);
             }
             else
             {
                 MessageBox.Show("you havent chosen anything");
             }
 
+        }
+
+        private void buttonBack_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you do not want to continue?", "Back to Authorization", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                AuthorizationPage authpage = new AuthorizationPage();
+                NavigationService.Navigate(authpage);
+            }
         }
     }
 }
