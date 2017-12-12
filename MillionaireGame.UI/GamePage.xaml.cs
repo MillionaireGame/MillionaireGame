@@ -58,7 +58,7 @@ namespace MillionaireGame.UI
 
             if (Tag == rep.Questions[questionsID].CorrectAnswer)
             {
-                if (int.Parse(textBlockMoney.Text) == 10000)
+                if (int.Parse(textBlockMoneyNext.Text) == 1000000) // menshe na odin vopros nado chto to sdelat 
                 {
                     MessageBox.Show("You are a millionaire Yohooooooo!!!!");
 
@@ -67,13 +67,26 @@ namespace MillionaireGame.UI
                 //  MessageBox.Show("Correct Answer yohooo");
                 else
                 {
-                    textBlockMoney.Text = prices[correctAnswerCounter].ToString();
-                    textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
-                    textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
-                    correctAnswerCounter++;
+                    if (correctAnswerCounter != 12)
+                    {
+                        textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                        textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
+                        textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
+                        correctAnswerCounter++;
 
 
-                    Questions();
+                        Questions();
+                    }
+                    else
+                    {
+                        textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                        textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
+                        textBlockMoneyNext.Text = ("");
+                       // Questions();
+
+
+                    }
+                    
                 }
                
             }
