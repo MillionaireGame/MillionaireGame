@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      Title="GamePage" Background="Black" Height="495" Width="600">
+      Title="GamePage" Background="Black" Height="495" Width="600" Cursor="Hand">
 
     <Grid Height="380" Width="540" Background="Black">
         <Grid.ColumnDefinitions>

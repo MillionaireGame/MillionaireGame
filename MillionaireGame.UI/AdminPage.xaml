@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      
-      Title="AdminPage" Height="495" Width="600">
+      Title="AdminPage" Height="495" Width="600" Cursor="Hand">
 
     <Grid Background="Black" Height="495" Width="600">
         <DataGrid HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="dataGridQuestions" Background="White" Height="190" Width="580" Margin="0,40,0,0"/>

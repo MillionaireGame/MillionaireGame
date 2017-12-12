@@ -22,13 +22,20 @@ namespace MillionaireGame.UI
     {
         public  SafetyNetPage()
         {
-            InitializeComponent();
+            InitializeComponent(); //10000, 20000, 50000, 100000, 200000, 500000, 1000000
             
-            comboboxPrices.Items.Add("1000");
+            comboboxPrices.Items.Add("100");
+            comboboxPrices.Items.Add("200");
             comboboxPrices.Items.Add("500");
+            comboboxPrices.Items.Add("1000");
             comboboxPrices.Items.Add("5000");
             comboboxPrices.Items.Add("10000");
-            
+            comboboxPrices.Items.Add("20000");
+            comboboxPrices.Items.Add("50000");
+            comboboxPrices.Items.Add("100000");
+            comboboxPrices.Items.Add("200000");
+            comboboxPrices.Items.Add("500000");
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

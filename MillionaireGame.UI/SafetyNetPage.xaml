@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      Title="SafetyNetPage" Height="495" Width="600" Background="Black">
+      Title="SafetyNetPage" Height="495" Width="600" Background="Black" Cursor="Hand">
 
     <Grid Height="360" Width="230" Background="Black">
-        <ComboBox Name="comboboxPrices" HorizontalAlignment="Center" Background="#FF005383" VerticalAlignment="Center" Width="160" Height="30" Margin="0,160,0,0" />
+        <ComboBox Name="comboboxPrices" HorizontalAlignment="Center" Background="#FF005383" VerticalAlignment="Center" Width="160" Height="30" Foreground="Black" FontSize="16" Margin="0,160,0,0" />
         <Image x:Name="logo" Height="170" Width="170" VerticalAlignment="Top" HorizontalAlignment="Center" Source="Images/logo.png"/>
         <Button x:Name="buttonBack"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="30" Margin="-185,-66,0,0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Click="buttonBack_Click">
             <Image Source="Images/back.png"/>
