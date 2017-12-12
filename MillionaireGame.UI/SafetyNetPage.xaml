@@ -8,12 +8,12 @@
       Title="SafetyNetPage" Height="495" Width="600" Background="Black" Cursor="Hand">
 
     <Grid Height="360" Width="230" Background="Black">
-        <ComboBox Name="comboboxPrices" HorizontalAlignment="Center" Background="#FF005383" VerticalAlignment="Center" Width="160" Height="30" Foreground="Black" FontSize="16" Margin="0,160,0,0" />
+        <ComboBox Name="comboboxPrices" HorizontalAlignment="Center" Background="#FF005383" VerticalAlignment="Center" Width="160" Height="30" Foreground="Black" FontSize="16" Margin="0,160,0,0"/>
         <Image x:Name="logo" Height="170" Width="170" VerticalAlignment="Top" HorizontalAlignment="Center" Source="Images/logo.png"/>
         <Button x:Name="buttonBack"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Height="30" Margin="-185,-66,0,0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Click="buttonBack_Click">
             <Image Source="Images/back.png"/>
         </Button>
-        <Button Name ="Back" Content="Play" IsDefault="True" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Height="25"  Width="90" Margin="0,330,0,0" Click="Back_Click">
+        <Button Name ="Play" Content="Play" IsDefault="True" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Height="26"  Width="90" Margin="70,0,70,2" Click="Play_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

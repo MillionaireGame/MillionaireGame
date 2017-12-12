@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +27,7 @@ namespace MillionaireGame.UI
         {
             InitializeComponent();
             Questions();
+          //  string k = saf.ToAnotherWin();
 
         }
 
@@ -34,7 +36,8 @@ namespace MillionaireGame.UI
 
         List<int> questionUsedId = new List<int>();
         List<int> prices = new List<int>(new int[] { 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000 }); //List for prices
-
+        SafetyNetPage saf = new SafetyNetPage();
+        
         // hints
 
         //
@@ -43,38 +46,73 @@ namespace MillionaireGame.UI
        
         string correctLetter; //String to remember correct letter when you use audienceHelp
         string callAnswer; //String for correct answer when you use callHelp
-        
-       
+
+
 
         // one event for four buttons
         private void answer_Click(object sender, RoutedEventArgs e)
         {
             Repository rep = new Repository();
-          //  questionUsedId.Add(rep.Questions[questionsID])
+            //  questionUsedId.Add(rep.Questions[questionsID])
             string Tag = (sender as Button).Tag.ToString(); //Getting the Tag of button that has been checked (A,B,C or D)
+
             if (Tag == rep.Questions[questionsID].CorrectAnswer)
             {
-                MessageBox.Show("Correct Answer yohooo");
-                Questions();
-                textBlockMoney.Text = prices[correctAnswerCounter].ToString();
-                textBlockMoneyPrev.Text = prices[correctAnswerCounter-1].ToString();
-                textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
-                correctAnswerCounter++;
-                //  UpdateButton.Content = "Next Question";//If answer is correct, the content of the button will be "Next Question"
-                //  UpdateButton.Visibility = System.Windows.Visibility.Visible;
-                //  (sender as Button).Background = System.Windows.Media.Brushes.Green;
+                if (int.Parse(textBlockMoney.Text) == 10000)
+                {
+                    MessageBox.Show("You are a millionaire Yohooooooo!!!!");
 
+                    GoingBackOrUpdatingPage();
+                }
+                //  MessageBox.Show("Correct Answer yohooo");
+                else
+                {
+                    textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                    textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
+                    textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
+                    correctAnswerCounter++;
+
+
+                    Questions();
+                }
+               
             }
 
             else
             {
-                MessageBox.Show("Incorrect answer Sorry");
-                return;
+                if (int.Parse(textBlockMoney.Text)<5000) // suggesting that safety net is 10000
+                {
+                    MessageBox.Show("Sorry but your prize is NULL");
+                    GoingBackOrUpdatingPage();
+                }
+                else
+                {
+                    MessageBox.Show("You have already reached your guaranteed prize. You have won 5000 Lucky u !!!");
+                    GoingBackOrUpdatingPage();
+                    return;
+                }
+               
 
             }
 
 
         }
+
+        private void GoingBackOrUpdatingPage()
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to play again?", "Back to Authorization", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.No)
+            {
+                AuthorizationPage authpage = new AuthorizationPage();
+                NavigationService.Navigate(authpage);
+            }
+            else
+            {
+                GamePage gp = new GamePage();
+                NavigationService.Navigate(gp);
+            }
+        }
+            
 
         //methods for questions 
 

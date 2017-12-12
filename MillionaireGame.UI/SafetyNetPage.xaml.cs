@@ -24,6 +24,9 @@ namespace MillionaireGame.UI
         {
             InitializeComponent(); //10000, 20000, 50000, 100000, 200000, 500000, 1000000
             
+
+
+
             comboboxPrices.Items.Add("100");
             comboboxPrices.Items.Add("200");
             comboboxPrices.Items.Add("500");
@@ -35,26 +38,25 @@ namespace MillionaireGame.UI
             comboboxPrices.Items.Add("100000");
             comboboxPrices.Items.Add("200000");
             comboboxPrices.Items.Add("500000");
+         //  ToAnotherWin();
+            
 
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e)
+        public event Action<string> ChosenNet;
+        // public string chosenNet { get; set; }
+        string k;
+        public string ToAnotherWin()
         {
-            string m;
-            if (comboboxPrices.SelectedIndex > -1) //somthing was selected
-            {
-                m = comboboxPrices.SelectedItem.ToString();
-                MessageBox.Show("Your Safety Net is " + m);
-
-                GamePage gamepage = new GamePage();
-                NavigationService.Navigate(gamepage);
-            }
-            else
-            {
-                MessageBox.Show("you havent chosen anything");
-            }
-
+            k = comboboxPrices.SelectedItem.ToString();
+            return k;
         }
+
+
+
+
+      
+       
 
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
@@ -63,6 +65,28 @@ namespace MillionaireGame.UI
             {
                 AuthorizationPage authpage = new AuthorizationPage();
                 NavigationService.Navigate(authpage);
+            }
+        }
+
+       
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+           // string m;
+            ToAnotherWin();
+            if (comboboxPrices.SelectedIndex > -1) //somthing was selected
+            {
+                
+               // m = comboboxPrices.SelectedItem.ToString();
+                MessageBox.Show("Your Safety Net is " + k);
+
+
+                GamePage gamepage = new GamePage();
+                NavigationService.Navigate(gamepage);
+            }
+            else
+            {
+                MessageBox.Show("you havent chosen anything");
             }
         }
     }
