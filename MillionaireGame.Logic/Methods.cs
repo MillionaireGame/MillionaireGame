@@ -27,18 +27,44 @@ namespace MillionaireGame.Logic
 
         public static void CheckPlayer(string login, string password, out string message)
         {
-            using (var context = new Context())
+            message = "";
+            Repository r = new Repository();
+            int k = 0, i=0;
+            while ((k==0)&&(i<r.Persons.Count))
             {
-                if (context.Persons.FirstOrDefault(p => p.Login == login) != null)
+                k = 0;
+                if (r.Persons[i].Login == login)
                 {
-                    if (context.Persons.FirstOrDefault(p => p.Password == password) != null)
+                    if (r.Persons[i].Password == password)
+                     k = 1; 
 
-                        message = "";
-
-                    else message = "The wrong password. Try again!";
+                    else  k = 2; 
                 }
-                else  message = "You should register!"; 
+                
+                i++;
             }
+            switch (k)
+            {
+                case 1: message = "";
+                    break;
+                case 2: message = "The wrong password. Try again!";
+                    break;
+                case 0: message = "You should register!";
+                    break;
+            }
+           
+             /*using (var context = new Context())
+             {
+                 if (context.Persons.FirstOrDefault(p => p.Login == login) != null)
+                 {
+                     if (context.Persons.FirstOrDefault(p => p.Password == password) != null)
+
+                         message = "";
+
+                     else message = "The wrong password. Try again!";
+                 }
+                 else  message = "You should register!"; 
+             }*/
         }
     }
 }

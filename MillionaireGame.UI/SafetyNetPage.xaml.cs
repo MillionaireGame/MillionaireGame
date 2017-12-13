@@ -31,6 +31,7 @@ namespace MillionaireGame.UI
             comboboxPrices.Items.Add("200");
             comboboxPrices.Items.Add("500");
             comboboxPrices.Items.Add("1000");
+            comboboxPrices.Items.Add("2000");
             comboboxPrices.Items.Add("5000");
             comboboxPrices.Items.Add("10000");
             comboboxPrices.Items.Add("20000");
@@ -38,26 +39,11 @@ namespace MillionaireGame.UI
             comboboxPrices.Items.Add("100000");
             comboboxPrices.Items.Add("200000");
             comboboxPrices.Items.Add("500000");
-         //  ToAnotherWin();
-            
+        
 
         }
 
-        public event Action<string> ChosenNet;
-        // public string chosenNet { get; set; }
-        string k;
-        public string ToAnotherWin()
-        {
-            k = comboboxPrices.SelectedItem.ToString();
-            return k;
-        }
-
-
-
-
-      
-       
-
+        
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you do not want to continue?", "Back to Authorization", MessageBoxButton.YesNo);
@@ -72,21 +58,20 @@ namespace MillionaireGame.UI
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
-           // string m;
-            ToAnotherWin();
+          
+            
             if (comboboxPrices.SelectedIndex > -1) //somthing was selected
             {
                 
-               // m = comboboxPrices.SelectedItem.ToString();
-                MessageBox.Show("Your Safety Net is " + k);
+                MessageBox.Show("Your Safety Net is " + comboboxPrices.SelectedItem.ToString());
 
 
-                GamePage gamepage = new GamePage();
+                GamePage gamepage = new GamePage(comboboxPrices.SelectedItem.ToString());
                 NavigationService.Navigate(gamepage);
             }
             else
             {
-                MessageBox.Show("you havent chosen anything");
+                MessageBox.Show("you haven't chosen anything");
             }
         }
     }

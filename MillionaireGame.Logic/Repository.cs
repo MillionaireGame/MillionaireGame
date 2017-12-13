@@ -21,5 +21,17 @@ namespace MillionaireGame.Logic
             }
         }
 
+        public IList<Person> Persons
+        {
+            get
+            {
+                using (var context = new Context())
+                {
+                    return context.Persons.ToList();
+                }
+            }
+        }
+
+
     }
 }

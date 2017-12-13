@@ -23,14 +23,19 @@ namespace MillionaireGame.UI
     /// </summary>
     public partial class GamePage : Page
     {
+        public GamePage(string net)
+        {
+            InitializeComponent();
+            Questions();
+
+            chosenNet = net;
+
+        }
         public GamePage()
         {
             InitializeComponent();
             Questions();
-          //  string k = saf.ToAnotherWin();
-
         }
-
         //started to write logic of the game
         private Question CurrentQuest { get; set; }
 
@@ -38,6 +43,7 @@ namespace MillionaireGame.UI
         List<string> prices = new List<string>(new string[] { "100", "200", "500", "1000", "2000", "5000", "10000", "20000", "50000", "100000", "200000", "500000", "1000000","" }); //List for prices
         SafetyNetPage saf = new SafetyNetPage();
         Repository rep = new Repository();
+        public string chosenNet { get; set; }
         // hints
 
         //
@@ -66,28 +72,27 @@ namespace MillionaireGame.UI
                 //  MessageBox.Show("Correct Answer yohooo");
                 else
                 {
-                    //if (correctAnswerCounter != 12)
-                    {
+                    
                         textBlockMoney.Text = prices[correctAnswerCounter].ToString();
                         textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
                         textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
                         correctAnswerCounter++;
 
                         Questions();
-                    }
+                    
                 }
             }
 
             else
             {
-                if (int.Parse(textBlockMoney.Text) < 5000) // suggesting that safety net is 10000
+                if (int.Parse(textBlockMoney.Text) <=int.Parse(chosenNet)) 
                 {
                     MessageBox.Show("Sorry but your prize is NULL");
                     GoingBackOrUpdatingPage();
                 }
                 else
                 {
-                    MessageBox.Show("You have already reached your guaranteed prize. You have won 5000 Lucky u !!!");
+                    MessageBox.Show($"You have already reached your guaranteed prize. You have won {chosenNet} Lucky u !!!");
                     GoingBackOrUpdatingPage();
                     return;
                 }
@@ -104,8 +109,8 @@ namespace MillionaireGame.UI
             }
             else
             {
-                GamePage gp = new GamePage();
-                NavigationService.Navigate(gp);
+                SafetyNetPage sp = new SafetyNetPage();
+                NavigationService.Navigate(sp);
             }
         }
             
