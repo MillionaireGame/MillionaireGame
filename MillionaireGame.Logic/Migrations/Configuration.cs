@@ -33,7 +33,8 @@ namespace MillionaireGame.Logic.Migrations
                 new Question { QuestionText = "How many Oscars does Leonardo DiCaprio have ?", AnswerA = "0", AnswerB = "2", AnswerC = "3", AnswerD = "1", CorrectAnswer = "D" },
                 new Question { QuestionText = "Who is the author of 'War and Peace' ?", AnswerA = "Fyodor Dostoyevsky", AnswerB = "Anton Chekhov", AnswerC = "Leo Tolstoy", AnswerD = "Nikolai Gogol", CorrectAnswer = "C" },
                 new Question { QuestionText = "Who was the first programmer in the world?", AnswerA = "Mark Zuckerberg", AnswerB = "Steve Jobs", AnswerC = "Bill Gates", AnswerD = "Ada Lovelace", CorrectAnswer = "D" },
-                
+                new Question { QuestionText = "5+5?", AnswerA = "2", AnswerB = "4", AnswerC = "3", AnswerD = "10", CorrectAnswer = "D" },
+
             };
 
             context.Questions.AddOrUpdate(p => p.QuestionText, questions);
