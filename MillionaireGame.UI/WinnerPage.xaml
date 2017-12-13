@@ -1,0 +1,13 @@
+﻿<Page x:Class="MillionaireGame.UI.WinnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MillionaireGame.UI"
+      mc:Ignorable="d" 
+      Title="WinnerPage" Height="495" Width="600" Background="Black" Cursor="Hand">
+
+    <Grid>
+        <Image x:Name="money" Height="250" VerticalAlignment="Bottom" Source="Images/winner.gif"/>
+    </Grid>
+</Page>

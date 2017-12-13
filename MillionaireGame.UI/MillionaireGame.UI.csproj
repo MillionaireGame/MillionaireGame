@@ -68,6 +68,9 @@
     <Compile Include="SafetyNetPage.xaml.cs">
       <DependentUpon>SafetyNetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinnerPage.xaml.cs">
+      <DependentUpon>WinnerPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SafetyNetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\winner.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

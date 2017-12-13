@@ -12,19 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
+using System.Windows.Interop;
 
 namespace MillionaireGame.UI
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для WinnerPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WinnerPage : Page
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            frameMain.Navigate(new GamePage());
-           
-        }
+
     }
 }
