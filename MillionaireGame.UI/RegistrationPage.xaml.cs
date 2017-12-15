@@ -24,6 +24,7 @@ namespace MillionaireGame.UI
         public RegistrationPage()
         {
             InitializeComponent();
+            textBoxLogin.Focus();
         }
 
         private void buttonSubmit_Click(object sender, RoutedEventArgs e)

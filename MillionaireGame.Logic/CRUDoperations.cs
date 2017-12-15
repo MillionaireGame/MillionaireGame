@@ -13,13 +13,22 @@ namespace MillionaireGame.Logic
         {
             using (var context = new Context())
             {
+
                 if (context.Questions.FirstOrDefault(q => q.QuestionText == text) == null)
                 {
-                    context.Questions.Add(new Question { QuestionText = text, AnswerA = answerA, AnswerB = answerB, AnswerC = answerC, AnswerD = answerD, CorrectAnswer = correctans });
+                   /* if (correctans == "A" || correctans == "B" || correctans == "C" || correctans == "D")
+                    {*/
+                        context.Questions.Add(new Question { QuestionText = text, AnswerA = answerA, AnswerB = answerB, AnswerC = answerC, AnswerD = answerD, CorrectAnswer = correctans });
 
-                    context.SaveChanges();
+                        context.SaveChanges();
 
-                    message = "Question was added!";
+                        message = "Question was added!";
+                   /* }
+                    else
+                    {
+                        message = "You have to put the letters 'A' , 'B' , 'C' or 'D' in the field with the correct answers! ";
+                    }*/
+                    
                 }
                 else message = "There is the same question in database!";
             }

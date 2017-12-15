@@ -32,17 +32,65 @@ namespace MillionaireGame.UI
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
             string msg;
-            CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
-            MessageBox.Show(msg);
 
-            dataGridQuestions.ItemsSource = null;
-            dataGridQuestions.ItemsSource = _repository.Questions;
-            textBoxNewQuestion.Text = null;
-            textBoxAnswerA.Text = null;
-            textBoxAnswerB.Text = null;
-            textBoxAnswerC.Text = null;
-            textBoxAnswerD.Text = null;
-            textBoxCorrectAnswer.Text = null;
+            if (string.IsNullOrWhiteSpace(textBoxNewQuestion.Text))
+            {
+                MessageBox.Show("You have to input a new question");
+                textBoxNewQuestion.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxAnswerA.Text))
+            {
+                MessageBox.Show("You have to input answer A");
+                textBoxAnswerA.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxAnswerB.Text))
+            {
+                MessageBox.Show("You have to input answer B");
+                textBoxAnswerB.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxAnswerC.Text))
+            {
+                MessageBox.Show("You have to input answer C");
+                textBoxAnswerC.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxAnswerD.Text))
+            {
+                MessageBox.Show("You have to input answer D");
+                textBoxAnswerD.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxCorrectAnswer.Text))
+            {
+                MessageBox.Show("You have to input a correct answer");
+                textBoxCorrectAnswer.Focus();
+                return;
+            }
+
+            if (textBoxCorrectAnswer.Text == "A" || textBoxCorrectAnswer.Text == "B" || textBoxCorrectAnswer.Text == "C" || textBoxCorrectAnswer.Text == "D")
+            {
+                CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
+                MessageBox.Show(msg);
+
+                dataGridQuestions.ItemsSource = null;
+                dataGridQuestions.ItemsSource = _repository.Questions;
+                textBoxNewQuestion.Text = null;
+                textBoxAnswerA.Text = null;
+                textBoxAnswerB.Text = null;
+                textBoxAnswerC.Text = null;
+                textBoxAnswerD.Text = null;
+                textBoxCorrectAnswer.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D'");
+                return;
+            }
+        
+
         }
 
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
