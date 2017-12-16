@@ -22,11 +22,8 @@ namespace MillionaireGame.UI
     {
         public  SafetyNetPage()
         {
-            InitializeComponent(); //10000, 20000, 50000, 100000, 200000, 500000, 1000000
+            InitializeComponent();           
             
-
-
-
             comboboxPrices.Items.Add("100");
             comboboxPrices.Items.Add("200");
             comboboxPrices.Items.Add("500");
@@ -39,10 +36,7 @@ namespace MillionaireGame.UI
             comboboxPrices.Items.Add("100000");
             comboboxPrices.Items.Add("200000");
             comboboxPrices.Items.Add("500000");
-        
-
         }
-
         
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
@@ -53,25 +47,17 @@ namespace MillionaireGame.UI
                 NavigationService.Navigate(authpage);
             }
         }
-
-       
-
+        
         private void Play_Click(object sender, RoutedEventArgs e)
-        {
-          
-            
+        {            
             if (comboboxPrices.SelectedIndex > -1) //somthing was selected
             {
-                
-                MessageBox.Show("Your Safety Net is " + comboboxPrices.SelectedItem.ToString());
-
-
                 GamePage gamepage = new GamePage(comboboxPrices.SelectedItem.ToString());
                 NavigationService.Navigate(gamepage);
             }
             else
             {
-                MessageBox.Show("you haven't chosen anything");
+                MessageBox.Show("You haven't chosen anything");
             }
         }
     }

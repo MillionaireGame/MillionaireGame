@@ -50,7 +50,7 @@ namespace MillionaireGame.UI
         int correctAnswerCounter = 1;
         //  int questionsID;
         public int questionsID { get; set; }
-
+        public string msg { get; set; }
         
         // one event for four buttons
         private void answer_Click(object sender, RoutedEventArgs e)
@@ -63,36 +63,42 @@ namespace MillionaireGame.UI
             {
                 if (int.Parse(textBlockMoney.Text) == 1000000)
                 {
-                    WinnerPage winnerPage = new WinnerPage();
+                    msg = "Congratulations! \n You're a millionaire!";
+                    chosenNet = "";
+
+                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
                     NavigationService.Navigate(winnerPage);
                 }
                 //  MessageBox.Show("Correct Answer yohooo");
                 else
                 {
-                    
                         textBlockMoney.Text = prices[correctAnswerCounter].ToString();
                         textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
                         textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
                         correctAnswerCounter++;
 
                         Questions();
-                    
                 }
             }
 
             else
             {
-                if (int.Parse(textBlockMoney.Text) <=int.Parse(chosenNet)) 
+                if (int.Parse(textBlockMoney.Text) <= int.Parse(chosenNet))
                 {
-                    MessageBox.Show("Sorry but your prize is NULL");
-                    GoingBackOrUpdatingPage();
+                    chosenNet = "";
+                    msg = "Sorry! \n Your prize is 0";
+                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
+                    NavigationService.Navigate(winnerPage);
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show($"You have already reached your guaranteed prize. You have won {chosenNet} Lucky u !!!");
-                    GoingBackOrUpdatingPage();
+                    msg = "Congratulations! \n Your prize is";
+                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
+                    NavigationService.Navigate(winnerPage);
                     return;
                 }
+
             }
         }
 
@@ -141,7 +147,6 @@ namespace MillionaireGame.UI
 
             }
             
-            
             return questionsID;
         }
 
@@ -166,10 +171,7 @@ namespace MillionaireGame.UI
         {
             Questions();
         }
-
-
-
-
+        
         // Tips
         private void button50_50_Click(object sender, RoutedEventArgs e)
         {

@@ -20,12 +20,35 @@ namespace MillionaireGame.UI
     /// <summary>
     /// Логика взаимодействия для WinnerPage.xaml
     /// </summary>
+
     public partial class WinnerPage : Page
     {
+        public WinnerPage(string msg, string chosenNet)
+        {
+            InitializeComponent();
+            _msg = msg;
+            _chosenNet = chosenNet;
+            textBlockMoney.Text = _chosenNet;
+            textBlockMessage.Text = _msg;
+        }
         public WinnerPage()
         {
             InitializeComponent();
+        }
 
+        public string _msg { get; set; }
+        public string _chosenNet { get; set; }
+
+        private void buttonPlayAgain_Click(object sender, RoutedEventArgs e)
+        {
+            SafetyNetPage safetyNetPage = new SafetyNetPage();
+            NavigationService.Navigate(safetyNetPage);
+        }
+
+        private void buttonExit_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationPage authPage = new AuthorizationPage();
+            NavigationService.Navigate(authPage);
         }
     }
 }
