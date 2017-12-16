@@ -51,9 +51,14 @@ namespace MillionaireGame.UI
         //  int questionsID;
         public int questionsID { get; set; }
         public string msg { get; set; }
-        
+
+        private async Task MethodToWait()
+        {
+            await Task.Run(() => { Thread.Sleep(2500); });
+        }
+
         // one event for four buttons
-        private void answer_Click(object sender, RoutedEventArgs e)
+        private async void answer_Click(object sender, RoutedEventArgs e)
         {
             
             //  questionUsedId.Add(rep.Questions[questionsID])
@@ -72,7 +77,12 @@ namespace MillionaireGame.UI
                 //  MessageBox.Show("Correct Answer yohooo");
                 else
                 {
-                        textBlockMoney.Text = prices[correctAnswerCounter].ToString();
+                    (sender as Button).Background = System.Windows.Media.Brushes.Green;
+
+                    await MethodToWait();
+
+                    (sender as Button).Background = System.Windows.Media.Brushes.Black;
+                    textBlockMoney.Text = prices[correctAnswerCounter].ToString();
                         textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
                         textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
                         correctAnswerCounter++;
