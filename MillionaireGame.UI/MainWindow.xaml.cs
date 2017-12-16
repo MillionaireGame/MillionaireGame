@@ -23,10 +23,7 @@ namespace MillionaireGame.UI
         public MainWindow()
         {
             InitializeComponent();
-         //   MessageBox.Show("Irina and Alena esli vi budete commitit to tut perexodit na admina i ia poka proveriala proverki Na segodnia moia missia zakonchena");
-            frameMain.Navigate(new SafetyNetPage());
-
-            //  frameMain.Navigate(new AuthorizationPage());
+            frameMain.Navigate(new AuthorizationPage());
 
         }
     }

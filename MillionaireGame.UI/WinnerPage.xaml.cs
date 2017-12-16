@@ -31,24 +31,18 @@ namespace MillionaireGame.UI
             textBlockMoney.Text = _chosenNet;
             textBlockMessage.Text = _msg;
         }
-        public WinnerPage()
-        {
-            InitializeComponent();
-        }
 
         public string _msg { get; set; }
         public string _chosenNet { get; set; }
 
         private void buttonPlayAgain_Click(object sender, RoutedEventArgs e)
         {
-            SafetyNetPage safetyNetPage = new SafetyNetPage();
-            NavigationService.Navigate(safetyNetPage);
+            NavigationService.Navigate(new SafetyNetPage());
         }
 
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationPage authPage = new AuthorizationPage();
-            NavigationService.Navigate(authPage);
+            NavigationService.Navigate(new AuthorizationPage());
         }
     }
 }

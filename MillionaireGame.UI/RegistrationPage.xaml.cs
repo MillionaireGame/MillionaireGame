@@ -47,9 +47,7 @@ namespace MillionaireGame.UI
             {
                 Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
                 MessageBox.Show(msg);
-
-                AuthorizationPage authorizationPage = new AuthorizationPage();
-                NavigationService.Navigate(authorizationPage);
+                NavigationService.Navigate(new AuthorizationPage());
             }
 
         }
@@ -59,8 +57,7 @@ namespace MillionaireGame.UI
             MessageBoxResult result = MessageBox.Show("Are you sure you do not want to register?", "Back to Authorization", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                AuthorizationPage authpage = new AuthorizationPage();
-                NavigationService.Navigate(authpage);
+               NavigationService.Navigate(new AuthorizationPage());
             }
         }
     }

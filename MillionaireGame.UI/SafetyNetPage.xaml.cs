@@ -43,8 +43,8 @@ namespace MillionaireGame.UI
             MessageBoxResult result = MessageBox.Show("Are you sure you do not want to continue?", "Back to Authorization", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                AuthorizationPage authpage = new AuthorizationPage();
-                NavigationService.Navigate(authpage);
+              
+                NavigationService.Navigate(new AuthorizationPage());
             }
         }
         
@@ -52,8 +52,8 @@ namespace MillionaireGame.UI
         {            
             if (comboboxPrices.SelectedIndex > -1) //somthing was selected
             {
-                GamePage gamepage = new GamePage(comboboxPrices.SelectedItem.ToString());
-                NavigationService.Navigate(gamepage);
+              
+                NavigationService.Navigate(new GamePage(comboboxPrices.SelectedItem.ToString()));
             }
             else
             {

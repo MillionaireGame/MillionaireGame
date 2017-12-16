@@ -31,11 +31,7 @@ namespace MillionaireGame.UI
             chosenNet = net;
 
         }
-        public GamePage()
-        {
-            InitializeComponent();
-            Questions();
-        }
+      
         //started to write logic of the game
         private Question CurrentQuest { get; set; }
 
@@ -44,24 +40,19 @@ namespace MillionaireGame.UI
         SafetyNetPage saf = new SafetyNetPage();
         Repository rep = new Repository();
         public string chosenNet { get; set; }
-        // hints
-
-        //
         int correctAnswerCounter = 1;
-        //  int questionsID;
         public int questionsID { get; set; }
         public string msg { get; set; }
+        Tips tips;
 
-        private async Task MethodToWait()
-        {
-            await Task.Run(() => { Thread.Sleep(2500); });
-        }
+
+      
 
         // one event for four buttons
         private async void answer_Click(object sender, RoutedEventArgs e)
         {
             
-            //  questionUsedId.Add(rep.Questions[questionsID])
+          
             string Tag = (sender as Button).Tag.ToString(); //Getting the Tag of button that has been checked (A,B,C or D)
 
             if (Tag == rep.Questions[questionsID].CorrectAnswer)
@@ -70,24 +61,21 @@ namespace MillionaireGame.UI
                 {
                     msg = "Congratulations! \n You're a millionaire!";
                     chosenNet = "";
-
-                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
-                    NavigationService.Navigate(winnerPage);
+                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
                 }
-                //  MessageBox.Show("Correct Answer yohooo");
+              
                 else
                 {
                     (sender as Button).Background = System.Windows.Media.Brushes.Green;
 
                     await MethodToWait();
-
                     (sender as Button).Background = System.Windows.Media.Brushes.Black;
                     textBlockMoney.Text = prices[correctAnswerCounter].ToString();
-                        textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
-                        textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
-                        correctAnswerCounter++;
+                    textBlockMoneyPrev.Text = prices[correctAnswerCounter - 1].ToString();
+                    textBlockMoneyNext.Text = prices[correctAnswerCounter + 1].ToString();
+                    correctAnswerCounter++;
+                    Questions();
 
-                        Questions();
                 }
             }
 
@@ -97,52 +85,37 @@ namespace MillionaireGame.UI
                 {
                     chosenNet = "";
                     msg = "Sorry! \n Your prize is 0";
-                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
-                    NavigationService.Navigate(winnerPage);
+                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
                     return;
                 }
                 else
                 {
                     msg = "Congratulations! \n Your prize is";
-                    WinnerPage winnerPage = new WinnerPage(msg, chosenNet);
-                    NavigationService.Navigate(winnerPage);
+                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
                     return;
                 }
+                
 
             }
         }
-
-        private void GoingBackOrUpdatingPage()
+        private async Task MethodToWait()
         {
-            MessageBoxResult result = MessageBox.Show("Do you want to play again?", "Back to Authorization", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.No)
-            {
-                AuthorizationPage authpage = new AuthorizationPage();
-                NavigationService.Navigate(authpage);
-            }
-            else
-            {
-                SafetyNetPage sp = new SafetyNetPage();
-                NavigationService.Navigate(sp);
-            }
+            await Task.Run(() => { Thread.Sleep(1500); });
         }
-
 
         //methods for questions 
-        Tips tips;
+        
         private int  Questions()
         {// choosing a random number for quest 
             // rand quest+ 
             // answers
-
-            Repository rep = new Repository();
+            
             Random rnd = new Random();
-            //  int month = rnd.Next(1, 13);
             questionsID = rnd.Next(0, rep.Questions.Count );
              tips = new Tips(questionsID);
             if (questionUsedId.Contains(questionsID))
             {
-              //  MessageBox.Show("This question has already been used");
+              
                Questions();
                 
             }
@@ -168,18 +141,12 @@ namespace MillionaireGame.UI
 
             if (result == MessageBoxResult.Yes)
             {
-                AuthorizationPage authpage = new AuthorizationPage();
-                NavigationService.Navigate(authpage);
+                NavigationService.Navigate(new AuthorizationPage());
             }
             else
             {
                 return;
             }
-        }
-
-        private void Upd(object sender, RoutedEventArgs e)
-        {
-            Questions();
         }
         
         // Tips

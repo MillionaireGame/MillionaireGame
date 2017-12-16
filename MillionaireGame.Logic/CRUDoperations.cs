@@ -17,19 +17,11 @@ namespace MillionaireGame.Logic
 
                 if (context.Questions.FirstOrDefault(q => q.QuestionText == text) == null)
                 {
-                   /* if (correctans == "A" || correctans == "B" || correctans == "C" || correctans == "D")
-                    {*/
+                   
                         context.Questions.Add(new Question { QuestionText = text, AnswerA = answerA, AnswerB = answerB, AnswerC = answerC, AnswerD = answerD, CorrectAnswer = correctans });
-
                         context.SaveChanges();
-
                         message = "Question was added!";
-                   /* }
-                    else
-                    {
-                        message = "You have to put the letters 'A' , 'B' , 'C' or 'D' in the field with the correct answers! ";
-                    }*/
-                    
+               
                 }
                 else message = "There is the same question in database!";
             }
@@ -60,13 +52,20 @@ namespace MillionaireGame.Logic
             MessageBoxResult result = MessageBox.Show("Are sure that you want to delete this question?", "Delete question", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                using (var context = new Context())
+                try
                 {
-                    var p = context.Questions.Find(question.ID);
-                    context.Questions.Remove(p);
-                    MessageBox.Show("Question was deleted!");
-                    context.SaveChanges();
+                    using (var context = new Context())
+                    {
+                        var p = context.Questions.Find(question.ID);
+                        context.Questions.Remove(p);
+                        MessageBox.Show("Question was deleted!");
+                        context.SaveChanges();
 
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("You haven't chosen the question");
                 }
             }
             

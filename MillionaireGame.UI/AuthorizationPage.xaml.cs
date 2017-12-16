@@ -44,9 +44,7 @@ namespace MillionaireGame.UI
 
             if (textBoxLogin.Text == "admin" && PasswordBox.Password.ToString() == "12345678")
             {
-                AdminPage adminpage = new AdminPage();
-                // GamePage gp = new GamePage();
-                NavigationService.Navigate(adminpage);
+                NavigationService.Navigate(new AdminPage());
             }
             else
             {
@@ -54,17 +52,15 @@ namespace MillionaireGame.UI
                 Methods.CheckPlayer(textBoxLogin.Text, PasswordBox.Password, out msg);
                 if (msg == "")
                 {
-                    SafetyNetPage safetynetpage = new SafetyNetPage();
-                    NavigationService.Navigate(safetynetpage);
+                    NavigationService.Navigate(new SafetyNetPage());
                 }
                 else MessageBox.Show(msg);
             }
         }
 
         private void buttonRegistration_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationPage registration = new RegistrationPage();
-            NavigationService.Navigate(registration);
+        { 
+            NavigationService.Navigate(new RegistrationPage());
         }
     }
 }
