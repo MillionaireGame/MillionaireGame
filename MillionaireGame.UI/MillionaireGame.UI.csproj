@@ -68,6 +68,7 @@
     <Compile Include="SafetyNetPage.xaml.cs">
       <DependentUpon>SafetyNetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tips.cs" />
     <Compile Include="WinnerPage.xaml.cs">
       <DependentUpon>WinnerPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\winner.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

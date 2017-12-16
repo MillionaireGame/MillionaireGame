@@ -48,10 +48,8 @@ namespace MillionaireGame.UI
 
         //
         int correctAnswerCounter = 1;
-        int questionsID;
-       
-        string correctLetter; //String to remember correct letter when you use audienceHelp
-        string callAnswer; //String for correct answer when you use callHelp
+        //  int questionsID;
+        public int questionsID { get; set; }
 
         
         // one event for four buttons
@@ -67,8 +65,6 @@ namespace MillionaireGame.UI
                 {
                     WinnerPage winnerPage = new WinnerPage();
                     NavigationService.Navigate(winnerPage);
-
-                  //  GoingBackOrUpdatingPage();
                 }
                 //  MessageBox.Show("Correct Answer yohooo");
                 else
@@ -114,10 +110,10 @@ namespace MillionaireGame.UI
                 NavigationService.Navigate(sp);
             }
         }
-            
+
 
         //methods for questions 
-
+        Tips tips;
         private int  Questions()
         {// choosing a random number for quest 
             // rand quest+ 
@@ -127,7 +123,7 @@ namespace MillionaireGame.UI
             Random rnd = new Random();
             //  int month = rnd.Next(1, 13);
             questionsID = rnd.Next(0, rep.Questions.Count );
-           
+             tips = new Tips(questionsID);
             if (questionUsedId.Contains(questionsID))
             {
               //  MessageBox.Show("This question has already been used");
@@ -144,7 +140,7 @@ namespace MillionaireGame.UI
                 buttonAnswerD.Content = "D: " + rep.Questions[questionsID].AnswerD.ToString();
 
             }
-            // randomCommand = "SELECT top 1 * from QuestionTable ORDER BY Rnd(-(100000*ID)*Time()) ";
+            
             
             return questionsID;
         }
@@ -171,39 +167,31 @@ namespace MillionaireGame.UI
             Questions();
         }
 
+
+
+
+        // Tips
         private void button50_50_Click(object sender, RoutedEventArgs e)
         {
             button50_50.Visibility = System.Windows.Visibility.Hidden;
-            List<string> tags = new List<string> { "A", "B", "C", "D" };
+            List<string> _tags;
 
-            for (int i = 0; i < tags.Count; i++)
+            _tags = tips.TwoVarTip();
+            for (int i = 0; i < _tags.Count; i++)
             {
-                if (tags[i] == rep.Questions[questionsID].CorrectAnswer)
-                {
-                    correctLetter = rep.Questions[questionsID].CorrectAnswer;
-                    tags.RemoveAt(i);
-                }
-            }
-
-            Random myRandom = new Random();
-            int tagForRemove = myRandom.Next(0, 2);
-            tags.RemoveAt(tagForRemove);
-
-            for (int i = 0; i < tags.Count; i++)
-            {
-                if (tags[i] == "A")
+                if (_tags[i] == "A")
                 {
                     buttonAnswerA.Content = String.Empty;
                 }
-                if (tags[i]=="B")
+                if (_tags[i] == "B")
                 {
                     buttonAnswerB.Content = String.Empty;
                 }
-                if (tags[i] == "C")
+                if (_tags[i] == "C")
                 {
                     buttonAnswerC.Content = String.Empty;
                 }
-                if (tags[i] == "D")
+                if (_tags[i] == "D")
                 {
                     buttonAnswerD.Content = String.Empty;
                 }
@@ -212,45 +200,17 @@ namespace MillionaireGame.UI
 
         }
 
+        
         private void buttonCall_Click(object sender, RoutedEventArgs e)
         {
             buttonCall.Visibility = System.Windows.Visibility.Hidden;
-
-            MessageBox.Show("Your friend thinks that correct answer is " + rep.Questions[questionsID].CorrectAnswer);
+            MessageBox.Show(tips.CallTip().ToString());
         }
 
         private void buttobAudience_Click(object sender, RoutedEventArgs e)
         {
             buttobAudience.Visibility = System.Windows.Visibility.Hidden;
-
-            List<string> tags = new List<string> { "A", "B", "C", "D" };
-
-            Random myRandom = new Random();
-
-            int correctPercent = myRandom.Next(51, 100); 
-            string correctAnswerPercent = correctPercent.ToString();
-
-            int anotherPercent1 = myRandom.Next(0, 100 - correctPercent);
-            string percent1 = anotherPercent1.ToString();
-
-            int anotherPercent2 = myRandom.Next(0, 100 - correctPercent - anotherPercent1);
-            string percent2 = anotherPercent2.ToString();
-
-            string percent3 = (100 - correctPercent - anotherPercent1 - anotherPercent2).ToString();
-
-            for (int i = 0; i < tags.Count; i++)
-            {
-                if (tags[i] == rep.Questions[questionsID].CorrectAnswer)
-                {
-                    correctLetter = rep.Questions[questionsID].CorrectAnswer;
-                    tags.RemoveAt(i);
-                }
-            }
-            var anotherLetter1 = tags[0];
-            var anotherLetter2 = tags[1];
-            var anotherLetter3 = tags[2];
-
-            MessageBox.Show(correctLetter + " : " + correctPercent + "% \n" + anotherLetter1 + " : " + percent1 + "% \n" + anotherLetter2 + " : " + percent2 + "% \n" + anotherLetter3 + " : " + percent3 + "% \n");
+            MessageBox.Show(tips.AudienceTip().ToString());
         }
     }
     

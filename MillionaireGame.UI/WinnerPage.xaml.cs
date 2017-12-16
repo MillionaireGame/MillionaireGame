@@ -22,6 +22,10 @@ namespace MillionaireGame.UI
     /// </summary>
     public partial class WinnerPage : Page
     {
+        public WinnerPage()
+        {
+            InitializeComponent();
 
+        }
     }
 }

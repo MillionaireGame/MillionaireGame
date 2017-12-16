@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionaireGame.UI
 {
-   static class Pages
+    static class Pages
     {
         private static AdminPage _adminPage = new AdminPage();
         public static AdminPage AdminPage
@@ -50,6 +50,15 @@ namespace MillionaireGame.UI
             get
             {
                 return _safetyNetPage;
+            }
+        }
+
+        private static WinnerPage _winnerPage = new WinnerPage();
+        public static WinnerPage WinnerPage
+        {
+            get
+            {
+                return _winnerPage;
             }
         }
     }
