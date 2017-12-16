@@ -65,9 +65,10 @@ namespace MillionaireGame.UI
             {
                 if (int.Parse(textBlockMoney.Text) == 1000000)
                 {
-                    MessageBox.Show("You are a millionaire Yohooooooo!!!!");
+                    WinnerPage winnerPage = new WinnerPage();
+                    NavigationService.Navigate(winnerPage);
 
-                    GoingBackOrUpdatingPage();
+                  //  GoingBackOrUpdatingPage();
                 }
                 //  MessageBox.Show("Correct Answer yohooo");
                 else

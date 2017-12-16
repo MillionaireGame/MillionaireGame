@@ -33,8 +33,14 @@ namespace MillionaireGame.UI
             if (PasswordBox.Password != PasswordBox2.Password)
             {
                 MessageBox.Show("Passwords do not coincide. Try again!");
-                PasswordBox.Password = null;
-                PasswordBox2.Password = null;
+                PasswordBox.Clear();
+                PasswordBox2.Clear();
+            }
+            if(PasswordBox.Password.Length<8)
+            {
+                MessageBox.Show("Your password is too short (minimal length is 8 numbers or/and letters). Try again!");
+                PasswordBox.Clear();
+                PasswordBox2.Clear();
             }
             else
 

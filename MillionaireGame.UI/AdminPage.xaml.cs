@@ -69,7 +69,11 @@ namespace MillionaireGame.UI
                 textBoxCorrectAnswer.Focus();
                 return;
             }
-
+            if(textBoxAnswerA.Text==textBoxAnswerB.Text || textBoxAnswerB.Text==textBoxAnswerC.Text || textBoxAnswerC.Text==textBoxAnswerD.Text || 
+                textBoxAnswerD.Text==textBoxAnswerA.Text || textBoxAnswerA.Text==textBoxAnswerC.Text || textBoxAnswerB.Text==textBoxAnswerD.Text)
+            {
+                MessageBox.Show("All answers should not be the same!");
+            }
             if (textBoxCorrectAnswer.Text == "A" || textBoxCorrectAnswer.Text == "B" || textBoxCorrectAnswer.Text == "C" || textBoxCorrectAnswer.Text == "D")
             {
                 CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
@@ -86,7 +90,8 @@ namespace MillionaireGame.UI
             }
             else
             {
-                MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D'");
+                MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field");
+                textBoxCorrectAnswer.Clear();
                 return;
             }
         
@@ -105,7 +110,7 @@ namespace MillionaireGame.UI
         {
             CRUDoperations.DeleteQuestion(dataGridQuestions.SelectedItem as Question);
             Refresh();
-            MessageBox.Show("Question was deleted!");
+            
             
             
         }

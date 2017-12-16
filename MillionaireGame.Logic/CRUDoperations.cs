@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Windows;
 
 namespace MillionaireGame.Logic
 {
@@ -56,14 +57,17 @@ namespace MillionaireGame.Logic
 
         public static void DeleteQuestion(Question question)
         {
-            using (var context = new Context())
+            MessageBoxResult result = MessageBox.Show("Are sure that you want to delete this question?", "Delete question", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
             {
-                
+                using (var context = new Context())
+                {
                     var p = context.Questions.Find(question.ID);
                     context.Questions.Remove(p);
-
+                    MessageBox.Show("Question was deleted!");
                     context.SaveChanges();
-                  
+
+                }
             }
             
 

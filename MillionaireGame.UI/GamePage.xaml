@@ -12,7 +12,7 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textQuestion" Height="40" Width="400" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" Text="" TextAlignment="Center" Margin="72,0,68,140" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textQuestion" Height="55" TextWrapping="Wrap" Width="400" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" Text="" TextAlignment="Center" Margin="72,0,68,140" Grid.ColumnSpan="2"/>
         <Button x:Name="buttonAnswerA" Tag="A" Content="" Width="162"  Height="51" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,255,0,0" Background="Black" Foreground="White" Click="answer_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="buttonAnswerB" Tag="B" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162"  Height="51" Margin="310,255,0,0" Background="Black" Foreground="White" Click="answer_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="buttonAnswerC" Tag="C" Content="" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="72,320,0,0" Width="162" Height="51" Background="Black" Foreground="White" Click="answer_Click" Grid.ColumnSpan="2"/>
