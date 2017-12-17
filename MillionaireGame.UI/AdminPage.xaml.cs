@@ -37,7 +37,7 @@ namespace MillionaireGame.UI
                 (string.IsNullOrWhiteSpace(textBoxAnswerB.Text)) || (string.IsNullOrWhiteSpace(textBoxAnswerC.Text)) ||
                 (string.IsNullOrWhiteSpace(textBoxAnswerD.Text)) || (string.IsNullOrWhiteSpace(textBoxCorrectAnswer.Text)))
             {
-                MessageBox.Show("You have to input all lines!");
+                MessageBox.Show("You have to input all fields!");
             }
 
             else
@@ -64,7 +64,7 @@ namespace MillionaireGame.UI
                     }
                     else
                     {
-                        MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field");
+                        MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field!");
                         textBoxCorrectAnswer.Clear();
                     }
                 }
@@ -73,8 +73,8 @@ namespace MillionaireGame.UI
 
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
         {
-            CRUDoperations.EditQuestion(dataGridQuestions.ItemsSource as IEnumerable<Question>);
-            MessageBox.Show("Quetions were edited!");
+            CRUDoperations.EditQuestion(dataGridQuestions.ItemsSource as IList<Question>, out string msg);
+            MessageBox.Show(msg);
 
             Refresh();
         }

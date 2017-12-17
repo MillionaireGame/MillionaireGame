@@ -28,22 +28,65 @@ namespace MillionaireGame.Logic
             
         }
 
-        public static void EditQuestion(IEnumerable<Question> questions)
+        public static void EditQuestion(IList<Question> questions, out string message)
         {
-            using (var context = new Context())
+            message = "";
+            
+            int k = 0, i = 0;
+            while ((k == 0) && (i < questions.Count))
             {
-                foreach (var q in questions)
+                k = 0;
+                if ((string.IsNullOrWhiteSpace(questions[i].QuestionText) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerA) == false) &&
+                    (string.IsNullOrWhiteSpace(questions[i].AnswerB) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerC) == false) &&
+                    (string.IsNullOrWhiteSpace(questions[i].AnswerD) == false) && (string.IsNullOrWhiteSpace(questions[i].CorrectAnswer) == false))
                 {
-                    context.Questions.Find(q.ID).QuestionText=q.QuestionText;
-                    context.Questions.Find(q.ID).AnswerA = q.AnswerA;
-                    context.Questions.Find(q.ID).AnswerB = q.AnswerB;
-                    context.Questions.Find(q.ID).AnswerC = q.AnswerC;
-                    context.Questions.Find(q.ID).AnswerD = q.AnswerD;
-                    context.Questions.Find(q.ID).CorrectAnswer = q.CorrectAnswer;
-                    
+                    if ((questions[i].AnswerA != questions[i].AnswerB && questions[i].AnswerA != questions[i].AnswerC && questions[i].AnswerA != questions[i].AnswerD &&
+                    questions[i].AnswerB != questions[i].AnswerC && questions[i].AnswerB != questions[i].AnswerD && questions[i].AnswerC != questions[i].AnswerD))
+                    {
+                        if (questions[i].CorrectAnswer == "A" || questions[i].CorrectAnswer == "B" || questions[i].CorrectAnswer == "C" || questions[i].CorrectAnswer == "D")
+                        {
+                            k = 0;
+                        }
+                        else k = 1;
+                    }
+                    else k = 2;
                 }
+                else k = 3;
 
-                context.SaveChanges();
+                i++;
+            }
+            switch (k)
+            {
+                case 0:
+                    message = "Questions were edited!";
+                    break;
+                case 1:
+                    message = "You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field";
+                    break;
+                case 2:
+                    message = "Answers can't be the same!";
+                    break;
+                case 3:
+                    message = "You have to input all fields!";
+                    break;
+            }
+            if (k == 0)
+            {
+                 using (var context = new Context())
+                 {
+                     foreach (var q in questions)
+                     {
+                         context.Questions.Find(q.ID).QuestionText=q.QuestionText;
+                         context.Questions.Find(q.ID).AnswerA = q.AnswerA;
+                         context.Questions.Find(q.ID).AnswerB = q.AnswerB;
+                         context.Questions.Find(q.ID).AnswerC = q.AnswerC;
+                         context.Questions.Find(q.ID).AnswerD = q.AnswerD;
+                         context.Questions.Find(q.ID).CorrectAnswer = q.CorrectAnswer;
+
+                     }
+
+                     context.SaveChanges();
+                 }
             }
         }
 
