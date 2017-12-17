@@ -43,7 +43,6 @@ namespace MillionaireGame.Logic.Migrations
                 new Question { QuestionText = "What percentage of people are left-handed?", AnswerA = "13%", AnswerB = "40%", AnswerC = "66%", AnswerD = "3%", CorrectAnswer = "A" },
                 new Question { QuestionText = "What was the first novel written on a typewriter?", AnswerA = "To Kill A Mockingbird", AnswerB = "Tom Sawyer", AnswerC = "Anna Karenina", AnswerD = "Robinson Crusoe", CorrectAnswer = "B" },
                 new Question { QuestionText = "What is the longest river in the world?", AnswerA = "The Nile", AnswerB = "The Don", AnswerC = "The Volga", AnswerD = "The Amazon", CorrectAnswer = "A" },
-                new Question { QuestionText = "'Nephelococcygia' is the practice of doing what?", AnswerA = "Breaking glass with your voice", AnswerB = "Swimming in freezing water", AnswerC = "Sleeping with your eyes open", AnswerD = "Finding shapes in clouds", CorrectAnswer = "D" },
                 new Question { QuestionText = "Which insect shorted out an early supercomputer and inspired the term 'computer bug'?", AnswerA = "Moth", AnswerB = "Roach", AnswerC = "Fly", AnswerD = "Japanese beetle", CorrectAnswer = "A" },
                 new Question { QuestionText = "Which of the following men does not have a chemical element named for him?", AnswerA = "Albert Einstein", AnswerB = "Niels Bohr", AnswerC = "Isaac Newton", AnswerD = "Enrico Fermi", CorrectAnswer = "C" },
                 

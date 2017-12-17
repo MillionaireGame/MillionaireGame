@@ -30,25 +30,32 @@ namespace MillionaireGame.UI
         private void buttonSubmit_Click(object sender, RoutedEventArgs e)
         {
             string msg;
-            if (PasswordBox.Password != PasswordBox2.Password)
-            {
-                MessageBox.Show("Passwords do not coincide. Try again!");
-                PasswordBox.Clear();
-                PasswordBox2.Clear();
-            }
-            if(PasswordBox.Password.Length<8)
-            {
-                MessageBox.Show("Your password is too short (minimal length is 8 numbers or/and letters). Try again!");
-                PasswordBox.Clear();
-                PasswordBox2.Clear();
-            }
-            else
 
+            if (textBoxLogin.Text != "admin")
             {
-                MethodsForPersons.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
-                MessageBox.Show(msg);
-                NavigationService.Navigate(new AuthorizationPage());
+                if ((string.IsNullOrWhiteSpace(textBoxLogin.Text))|| (string.IsNullOrWhiteSpace(PasswordBox.Password))|| (string.IsNullOrWhiteSpace(PasswordBox2.Password)))
+                {
+                    MessageBox.Show("You have to input all fields!");
+                   
+                }
+                else
+
+                {
+                    if (PasswordBox.Password != PasswordBox2.Password)
+                    {
+                        MessageBox.Show("Passwords do not coincide. Try again!");
+                        PasswordBox.Clear();
+                        PasswordBox2.Clear();
+                    }
+                    else
+                    {
+                        Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
+                        MessageBox.Show(msg);
+                        NavigationService.Navigate(new AuthorizationPage());
+                    }
+                }
             }
+            else MessageBox.Show("You can't use this login.");
 
         }
 
