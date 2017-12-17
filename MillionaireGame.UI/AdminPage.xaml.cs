@@ -33,69 +33,42 @@ namespace MillionaireGame.UI
         {
             string msg;
 
-            if (string.IsNullOrWhiteSpace(textBoxNewQuestion.Text))
+            if ((string.IsNullOrWhiteSpace(textBoxNewQuestion.Text)) || (string.IsNullOrWhiteSpace(textBoxAnswerA.Text)) ||
+                (string.IsNullOrWhiteSpace(textBoxAnswerB.Text)) || (string.IsNullOrWhiteSpace(textBoxAnswerC.Text)) ||
+                (string.IsNullOrWhiteSpace(textBoxAnswerD.Text)) || (string.IsNullOrWhiteSpace(textBoxCorrectAnswer.Text)))
             {
-                MessageBox.Show("You have to input a new question");
-                textBoxNewQuestion.Focus();
-                return;
+                MessageBox.Show("You have to input all lines!");
             }
-            if (string.IsNullOrWhiteSpace(textBoxAnswerA.Text))
-            {
-                MessageBox.Show("You have to input answer A");
-                textBoxAnswerA.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxAnswerB.Text))
-            {
-                MessageBox.Show("You have to input answer B");
-                textBoxAnswerB.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxAnswerC.Text))
-            {
-                MessageBox.Show("You have to input answer C");
-                textBoxAnswerC.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxAnswerD.Text))
-            {
-                MessageBox.Show("You have to input answer D");
-                textBoxAnswerD.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(textBoxCorrectAnswer.Text))
-            {
-                MessageBox.Show("You have to input a correct answer");
-                textBoxCorrectAnswer.Focus();
-                return;
-            }
-            if(textBoxAnswerA.Text==textBoxAnswerB.Text || textBoxAnswerB.Text==textBoxAnswerC.Text || textBoxAnswerC.Text==textBoxAnswerD.Text || 
-                textBoxAnswerD.Text==textBoxAnswerA.Text || textBoxAnswerA.Text==textBoxAnswerC.Text || textBoxAnswerB.Text==textBoxAnswerD.Text)
-            {
-                MessageBox.Show("All answers should not be the same!");
-            }
-            if (textBoxCorrectAnswer.Text == "A" || textBoxCorrectAnswer.Text == "B" || textBoxCorrectAnswer.Text == "C" || textBoxCorrectAnswer.Text == "D")
-            {
-                CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
-                MessageBox.Show(msg);
 
-                dataGridQuestions.ItemsSource = null;
-                dataGridQuestions.ItemsSource = _repository.Questions;
-                textBoxNewQuestion.Text = null;
-                textBoxAnswerA.Text = null;
-                textBoxAnswerB.Text = null;
-                textBoxAnswerC.Text = null;
-                textBoxAnswerD.Text = null;
-                textBoxCorrectAnswer.Text = null;
-            }
             else
             {
-                MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field");
-                textBoxCorrectAnswer.Clear();
-                return;
-            }
-        
+                if (textBoxAnswerA.Text == textBoxAnswerB.Text || textBoxAnswerB.Text == textBoxAnswerC.Text || textBoxAnswerC.Text == textBoxAnswerD.Text ||
+                    textBoxAnswerD.Text == textBoxAnswerA.Text || textBoxAnswerA.Text == textBoxAnswerC.Text || textBoxAnswerB.Text == textBoxAnswerD.Text)
+                {
+                    MessageBox.Show("All answers should not be the same!");
+                }
+                else
+                {
+                    if (textBoxCorrectAnswer.Text == "A" || textBoxCorrectAnswer.Text == "B" || textBoxCorrectAnswer.Text == "C" || textBoxCorrectAnswer.Text == "D")
+                    {
+                        CRUDoperations.AddQuestions(textBoxNewQuestion.Text, textBoxAnswerA.Text, textBoxAnswerB.Text, textBoxAnswerC.Text, textBoxAnswerD.Text, textBoxCorrectAnswer.Text, out msg);
+                        MessageBox.Show(msg);
 
+                        Refresh();
+                        textBoxNewQuestion.Clear();
+                        textBoxAnswerA.Clear();
+                        textBoxAnswerB.Clear();
+                        textBoxAnswerC.Clear();
+                        textBoxAnswerD.Clear();
+                        textBoxCorrectAnswer.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field");
+                        textBoxCorrectAnswer.Clear();
+                    }
+                }
+            }
         }
 
         private void buttonEdit_Click(object sender, RoutedEventArgs e)
@@ -109,16 +82,8 @@ namespace MillionaireGame.UI
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
             CRUDoperations.DeleteQuestion(dataGridQuestions.SelectedItem as Question);
-            Refresh();
-            
-            
-            
-        }
 
-        private void Refresh()
-        {
-            dataGridQuestions.ItemsSource = null;
-            dataGridQuestions.ItemsSource = _repository.Questions;
+            Refresh();
         }
 
         private void buttonBack_Click(object sender, RoutedEventArgs e)
@@ -130,5 +95,12 @@ namespace MillionaireGame.UI
                 NavigationService.Navigate(authpage);
             }
         }
+
+        private void Refresh()
+        {
+            dataGridQuestions.ItemsSource = null;
+            dataGridQuestions.ItemsSource = _repository.Questions;
+        }
+
     }
 }
