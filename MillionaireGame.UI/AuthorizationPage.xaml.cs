@@ -27,7 +27,14 @@ namespace MillionaireGame.UI
             textBoxLogin.Focus();
         }
 
-        private void buttonEnter_Click(object sender, RoutedEventArgs e)
+       
+
+        private void buttonRegistration_Click(object sender, RoutedEventArgs e)
+        { 
+            NavigationService.Navigate(new RegistrationPage());
+        }
+
+        private void buttonSignIn_Click(object sender, RoutedEventArgs e)
         {
             if (textBoxLogin.Text == "")
 
@@ -56,11 +63,6 @@ namespace MillionaireGame.UI
                 }
                 else MessageBox.Show(msg);
             }
-        }
-
-        private void buttonRegistration_Click(object sender, RoutedEventArgs e)
-        { 
-            NavigationService.Navigate(new RegistrationPage());
         }
     }
 }

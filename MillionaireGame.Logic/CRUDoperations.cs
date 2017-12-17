@@ -36,23 +36,26 @@ namespace MillionaireGame.Logic
             while ((k == 0) && (i < questions.Count))
             {
                 k = 0;
-                if ((string.IsNullOrWhiteSpace(questions[i].QuestionText) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerA) == false) &&
-                    (string.IsNullOrWhiteSpace(questions[i].AnswerB) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerC) == false) &&
-                    (string.IsNullOrWhiteSpace(questions[i].AnswerD) == false) && (string.IsNullOrWhiteSpace(questions[i].CorrectAnswer) == false))
+                if (questions[i].ID == 0)
                 {
-                    if ((questions[i].AnswerA != questions[i].AnswerB && questions[i].AnswerA != questions[i].AnswerC && questions[i].AnswerA != questions[i].AnswerD &&
-                    questions[i].AnswerB != questions[i].AnswerC && questions[i].AnswerB != questions[i].AnswerD && questions[i].AnswerC != questions[i].AnswerD))
+                    if ((string.IsNullOrWhiteSpace(questions[i].QuestionText) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerA) == false) &&
+                        (string.IsNullOrWhiteSpace(questions[i].AnswerB) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerC) == false) &&
+                        (string.IsNullOrWhiteSpace(questions[i].AnswerD) == false) && (string.IsNullOrWhiteSpace(questions[i].CorrectAnswer) == false))
                     {
-                        if (questions[i].CorrectAnswer == "A" || questions[i].CorrectAnswer == "B" || questions[i].CorrectAnswer == "C" || questions[i].CorrectAnswer == "D")
+                        if ((questions[i].AnswerA != questions[i].AnswerB && questions[i].AnswerA != questions[i].AnswerC && questions[i].AnswerA != questions[i].AnswerD &&
+                        questions[i].AnswerB != questions[i].AnswerC && questions[i].AnswerB != questions[i].AnswerD && questions[i].AnswerC != questions[i].AnswerD))
                         {
-                            k = 0;
+                            if (questions[i].CorrectAnswer == "A" || questions[i].CorrectAnswer == "B" || questions[i].CorrectAnswer == "C" || questions[i].CorrectAnswer == "D")
+                            {
+                                k = 0;
+                            }
+                            else k = 1;
                         }
-                        else k = 1;
+                        else k = 2;
                     }
-                    else k = 2;
+                    else k = 3;
                 }
-                else k = 3;
-
+                else k = 4;
                 i++;
             }
             switch (k)
@@ -67,7 +70,10 @@ namespace MillionaireGame.Logic
                     message = "Answers can't be the same!";
                     break;
                 case 3:
-                    message = "You have to input all fields!";
+                    message = "You have to fill in all the fields!";
+                    break;
+                case 4:
+                    message = "Sorry, but You can't edit this line";
                     break;
             }
             if (k == 0)

@@ -34,11 +34,13 @@ namespace MillionaireGame.UI
             {     
                 BitmapImage imgLoser = new BitmapImage(new Uri(@"pack://application:,,,/Images/loser.jpg"));
                 money.Source = imgLoser;
+                return;
             }
             if (_chosenNet!="")
             {
                 BitmapImage imgPrize = new BitmapImage(new Uri(@"pack://application:,,,/Images/prize.jpg"));
                 money.Source = imgPrize;
+                return;
             }
         }
 

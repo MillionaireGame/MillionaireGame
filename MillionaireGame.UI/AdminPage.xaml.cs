@@ -37,7 +37,7 @@ namespace MillionaireGame.UI
                 (string.IsNullOrWhiteSpace(textBoxAnswerB.Text)) || (string.IsNullOrWhiteSpace(textBoxAnswerC.Text)) ||
                 (string.IsNullOrWhiteSpace(textBoxAnswerD.Text)) || (string.IsNullOrWhiteSpace(textBoxCorrectAnswer.Text)))
             {
-                MessageBox.Show("You have to input all fields!");
+                MessageBox.Show("You have to fill in all the fields!");
             }
 
             else
@@ -45,7 +45,7 @@ namespace MillionaireGame.UI
                 if (textBoxAnswerA.Text == textBoxAnswerB.Text || textBoxAnswerB.Text == textBoxAnswerC.Text || textBoxAnswerC.Text == textBoxAnswerD.Text ||
                     textBoxAnswerD.Text == textBoxAnswerA.Text || textBoxAnswerA.Text == textBoxAnswerC.Text || textBoxAnswerB.Text == textBoxAnswerD.Text)
                 {
-                    MessageBox.Show("All answers should not be the same!");
+                    MessageBox.Show(" Answers can't be the same!");
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace MillionaireGame.UI
                     }
                     else
                     {
-                        MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer field!");
+                        MessageBox.Show("You have to input letters 'A' , 'B' , 'C' or 'D' in Correct Answer's field!");
                         textBoxCorrectAnswer.Clear();
                     }
                 }

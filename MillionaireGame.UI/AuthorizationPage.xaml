@@ -12,7 +12,7 @@
         <TextBox x:Name="textBoxLogin" Height="30" Width="200" Margin="15,0,15,146" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBlock x:Name="textBlockPassword" HorizontalAlignment="Left" Margin="15,218,80,0" Foreground="White" VerticalAlignment="Top" Width="50" Text="Password"/>
         <PasswordBox x:Name="PasswordBox" Height="30" Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="15,0,15,96" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <Button x:Name="buttonEnter" IsDefault="True" Content="Enter" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,55" Foreground="White" Click="buttonEnter_Click">
+        <Button x:Name="buttonSignIn" IsDefault="True" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25"  Width="90" Margin="70,55" Foreground="White" Click="buttonSignIn_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
