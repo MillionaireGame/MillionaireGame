@@ -19,7 +19,7 @@ namespace MillionaireGame.Logic
 
                         context.SaveChanges();
 
-                        message = "New player was added!";
+                        message = "Now you have to sign in.";
                     }
                     else message = "There is the same login in database!";
                 }

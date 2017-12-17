@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionaireGame.Logic
 {
-    public class Repository
+    public class Repository: IRepository
     {
         public IList<Question> Questions
         {
