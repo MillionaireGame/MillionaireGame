@@ -36,7 +36,7 @@ namespace MillionaireGame.Logic
             while ((k == 0) && (i < questions.Count))
             {
                 k = 0;
-                if (questions[i].ID == 0)
+                if (questions[i].ID != 0)
                 {
                     if ((string.IsNullOrWhiteSpace(questions[i].QuestionText) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerA) == false) &&
                         (string.IsNullOrWhiteSpace(questions[i].AnswerB) == false) && (string.IsNullOrWhiteSpace(questions[i].AnswerC) == false) &&
