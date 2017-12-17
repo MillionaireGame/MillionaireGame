@@ -49,7 +49,7 @@ namespace MillionaireGame.UI
                     }
                     else
                     {
-                        Methods.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
+                        MethodsForPersons.AddPerson(textBoxLogin.Text, PasswordBox.Password, out msg);
                         MessageBox.Show(msg);
                         NavigationService.Navigate(new AuthorizationPage());
                     }
