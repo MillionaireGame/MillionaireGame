@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="CRUDoperations.cs" />
-    <Compile Include="Methods.cs" />
+    <Compile Include="MethodsForPersons.cs" />
     <Compile Include="Migrations\201712071541542_InitialCreate.cs" />
     <Compile Include="Migrations\201712071541542_InitialCreate.Designer.cs">
       <DependentUpon>201712071541542_InitialCreate.cs</DependentUpon>

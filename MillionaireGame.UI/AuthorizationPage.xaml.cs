@@ -49,7 +49,7 @@ namespace MillionaireGame.UI
             else
             {
                 string msg;
-                Methods.CheckPlayer(textBoxLogin.Text, PasswordBox.Password, out msg);
+                MethodsForPersons.CheckPlayer(textBoxLogin.Text, PasswordBox.Password, out msg);
                 if (msg == "")
                 {
                     NavigationService.Navigate(new SafetyNetPage());

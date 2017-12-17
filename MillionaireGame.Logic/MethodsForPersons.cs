@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MillionaireGame.Logic
 {
-    public class Methods
+    public class MethodsForPersons
     {
         public static void AddPerson(string login, string password, out string message)
         {

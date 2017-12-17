@@ -21,15 +21,25 @@ namespace MillionaireGame.UI
     /// Логика взаимодействия для WinnerPage.xaml
     /// </summary>
 
-    public partial class WinnerPage : Page
+    public partial class EndOfGamePage : Page
     {
-        public WinnerPage(string msg, string chosenNet)
+        public EndOfGamePage(string msg, string chosenNet)
         {
             InitializeComponent();
             _msg = msg;
             _chosenNet = chosenNet;
             textBlockMoney.Text = _chosenNet;
             textBlockMessage.Text = _msg;
+            if (_chosenNet == "0")
+            {     
+                BitmapImage imgLoser = new BitmapImage(new Uri(@"pack://application:,,,/Images/loser.jpg"));
+                money.Source = imgLoser;
+            }
+            if (_chosenNet!="")
+            {
+                BitmapImage imgPrize = new BitmapImage(new Uri(@"pack://application:,,,/Images/prize.jpg"));
+                money.Source = imgPrize;
+            }
         }
 
         public string _msg { get; set; }

@@ -61,7 +61,7 @@ namespace MillionaireGame.UI
                 {
                     msg = "Congratulations! \n You're a millionaire!";
                     chosenNet = "";
-                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
+                    NavigationService.Navigate(new EndOfGamePage(msg, chosenNet));
                 }
               
                 else
@@ -83,15 +83,15 @@ namespace MillionaireGame.UI
             {
                 if (int.Parse(textBlockMoney.Text) <= int.Parse(chosenNet))
                 {
-                    chosenNet = "";
-                    msg = "Sorry! \n Your prize is 0";
-                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
+                    chosenNet = "0";
+                    msg = "Sorry! \n Your prize is";
+                    NavigationService.Navigate(new EndOfGamePage(msg, chosenNet));
                     return;
                 }
                 else
                 {
                     msg = "Congratulations! \n Your prize is";
-                    NavigationService.Navigate(new WinnerPage(msg, chosenNet));
+                    NavigationService.Navigate(new EndOfGamePage(msg, chosenNet));
                     return;
                 }
                 

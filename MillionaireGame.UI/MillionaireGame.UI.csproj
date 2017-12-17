@@ -67,8 +67,8 @@
     <Compile Include="SafetyNetPage.xaml.cs">
       <DependentUpon>SafetyNetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinnerPage.xaml.cs">
-      <DependentUpon>WinnerPage.xaml</DependentUpon>
+    <Compile Include="EndOfGamePage.xaml.cs">
+      <DependentUpon>EndOfGamePage.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminPage.xaml">
       <SubType>Designer</SubType>
@@ -111,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinnerPage.xaml">
+    <Page Include="EndOfGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,9 +165,6 @@
     <Resource Include="Images\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\money.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\back.png" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loser.jpg" />
+    <Resource Include="Images\prize.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

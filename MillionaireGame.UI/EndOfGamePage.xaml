@@ -1,14 +1,14 @@
-﻿<Page x:Class="MillionaireGame.UI.WinnerPage"
+﻿<Page x:Class="MillionaireGame.UI.EndOfGamePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MillionaireGame.UI"
       mc:Ignorable="d" 
-      Title="WinnerPage" Height="495" Width="600" Background="Black" Cursor="Hand">
+      Title="EndOfGamePage" Height="495" Width="600" Background="Black" Cursor="Hand">
 
     <Grid>
-        <Image x:Name="money" Height="250" VerticalAlignment="Bottom" Source="Images/winner.gif"/>
+        <Image x:Name="money" Height="250" VerticalAlignment="Bottom" Source="Images/winner.gif" />
         <TextBlock Name="textBlockMessage"  Text="Congratulations! You're a millionaire!" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="Blue" FontSize="28" Width="400" TextAlignment="Center" TextWrapping="Wrap" FontWeight="ExtraBold" Margin="0,30,0,0"/>
         <Button x:Name="buttonExit" IsDefault="True" Content="Exit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Foreground="White" Width="90" Margin="170,200" Click="buttonExit_Click">
             <Button.Background>
